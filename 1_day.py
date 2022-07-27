@@ -97,17 +97,79 @@
 #     print(f"Your BMI is {BMI}, you are clinically obese.")
 
 
-year = 1999
-if year%4 != 0:
-    print("Not leap")
-elif year%100 != 0:
-    print("Leap")
-elif year%400 == 0:
-    print("Leap")
-else:
-    print("Not leap")
+# year = 1999
+# if year%4 != 0:
+#     print("Not leap")
+# elif year%100 != 0:
+#     print("Leap")
+# elif year%400 == 0:
+#     print("Leap")
+# else:
+#     print("Not leap")
+
+# print("Welcome to the Love Calculator!")
+# name1 = input("What is your name? \n")
+# name2 = input("What is their name? \n")
+
+# name1 = name1.lower()
+# name2 = name2.lower()
+
+# keyWord1 = 'true'
+# keyWord2 = 'love'
+# score1 = 0
+# score2 = 0
+# scoreFinal = 0
+
+# for i in name1+name2:
+#     score1 += keyWord1.count(i)
+
+# for i in name1 + name2:
+#     score2 += keyWord2.count(i)
+
+# scoreFinal = score1*10 + score2
+
+# if scoreFinal < 10 or scoreFinal > 90:
+#     print(f"Your score is {scoreFinal}, you go together like coke and mentos.")
+# elif 40 <= scoreFinal <= 50:
+#     print(f"Your score is {scoreFinal}, you are alright together.")
+# else:
+#     print(f"Your score is {scoreFinal}.")
 
 
+
+# speech = "She said: Hi"
+# # speech = "She said: \"Hi\""
+# print(speech)
+
+
+
+
+# print("Welcome to Treasure Island.")
+# print("Your mission is to find the treasure.") 
+
+
+# step1= input('You\'re at a cross road. Where do you want to go? Type "left" or "right" \n').lower()
+# if step1 == "left":
+#     step2 = input('You\'ve come to a lake. There is an island in the middle of the lake. \
+#         Type "wait" to wait for a boat. Type "swim" to swim across. \n').lower()
+#     if step2 == "wait": 
+#         step3 = input("You arrive at the island unharmed. There is a house with 3 doors. \
+#             One red, one yellow and one blue. Which colour do you choose? \n").lower()
+#         if step3 == "red":
+#             print("It's a room full of fire. Game Over.")
+#         elif step3 == "yellow":
+#             print("You found the treasure! You Win!")
+#         elif step3 == "blue":
+#             print("You enter a room of beasts. Game Over.")
+#         else:
+#             print("You chose a door that doesn't exist")
+#     else:
+#         print("Attacked by trout. Game over.")
+# else:
+#     print("You fell into a hole. Game over.")
+
+
+import random
 
 
 
