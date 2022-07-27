@@ -15,4 +15,6 @@ https://www.programiz.com/python-programming/statement-indentation-comments
 Ask python
 https://www.askpython.com/ 
 
+Learning resource
+https://www.khanacademy.org/
 
