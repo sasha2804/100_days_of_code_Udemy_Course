@@ -1,1 +1,1 @@
-this rile contain all resources might be usefull for current course
+this rile contains all resources might be usefull for current course
