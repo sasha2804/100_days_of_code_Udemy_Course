@@ -169,12 +169,62 @@
 #     print("You fell into a hole. Game over.")
 
 
-import random
 
-random_float = random.random()
+# import random
+
+# test_seed = int(input("Create a seed number: "))
+# random.seed(test_seed)
 
 
-print(random_float*5)
+# result = random.randint(0,1)
+
+# if result == 1:
+#     print("Heads")
+# else:
+#     print("Tails")
+
+# x = -2
+
+# newlist = [x for x in range(10) if x%2==0]
+
+# print(newlist)
+
+# Angela, Ben, Jenny, Michael, Chloe
+
+# names_string = input("Give me everybody's names, separated by a comma. ")
+# names = names_string.split(", ")
+
+# # print(len(names))
+# # print(type(names))
+
+# import random
+# PersonNr = random.randint(0, len(names)-1)
+# print(names[PersonNr])
+
+
+row1 = ["⬜️","⬜️","⬜️"]
+row2 = ["⬜️","⬜️","⬜️"]
+row3 = ["⬜️","⬜️","⬜️"]
+map1 = [row1, row2, row3]
+print(f"{row1}\n{row2}\n{row3}")
+position = input("Where do you want to put the treasure? ")
+
+column = int(position[1])
+row = int(position[0])
+map1[column-1][row-1] = "x"
+for i in map1:
+    print(i)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
