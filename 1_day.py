@@ -202,23 +202,175 @@
 # print(names[PersonNr])
 
 
-row1 = ["⬜️","⬜️","⬜️"]
-row2 = ["⬜️","⬜️","⬜️"]
-row3 = ["⬜️","⬜️","⬜️"]
-map1 = [row1, row2, row3]
-print(f"{row1}\n{row2}\n{row3}")
-position = input("Where do you want to put the treasure? ")
+# row1 = ["⬜️","⬜️","⬜️"]
+# row2 = ["⬜️","⬜️","⬜️"]
+# row3 = ["⬜️","⬜️","⬜️"]
+# map1 = [row1, row2, row3]
+# print(f"{row1}\n{row2}\n{row3}")
+# position = input("Where do you want to put the treasure? ")
 
-column = int(position[1])
-row = int(position[0])
-map1[column-1][row-1] = "x"
-for i in map1:
-    print(i)
+# column = int(position[1])
+# row = int(position[0])
+# map1[column-1][row-1] = "x"
+# for i in map1:
+#     print(i)
+
+# user = "scissors"
+# computer = "paper"
+
+# from multiprocessing import parent_process
+# import random
+
+# list1 = ["user", "computer"]
+
+# userInput = input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors." )
 
 
 
 
 
+# if userInput == 0:
+#     list1[0] = "rock"
+# elif userInput == 1:
+#     list1[0] = "paper"
+# else:
+#     list1[0] = "scissors"
+
+
+# computerInput = random.randint(0,3)
+# if computerInput == 0:
+#     list1[1] = "rock"
+# elif computerInput == 1:
+#     list1[1] = "paper"
+# else:
+#     list1[1] = "scissors"
+
+
+# if list1[0] != list1[1]:
+#     # case 1
+#     if "scissors" in list1 and "paper" in list1:
+#         if list1.index("scissors") == 0:
+#             print("You won")
+#         else:
+#             print("PC won")
+
+#     # case 2
+#     if "rock" in list1 and "scissors" in list1:
+#         if list1.index("rock") == 0:
+#             print("You won")
+#         else:
+#             print("PC won")
+
+#     # case 3
+#     if "paper" in list1 and "rock" in list1:
+#         if list1.index("paper") == 0:
+#             print("You won")
+#         else:
+#             print("PC won")
+# else:
+#     print("There is no winner")
+    
+
+# print(f"\nuser input: {list1[0]}")
+# print(f"pc input: {list1[1]}")
+
+
+
+
+# import random
+
+# rock = '''
+#     _______
+# ---'   ____)
+#       (_____)
+#       (_____)
+#       (____)
+# ---.__(___)
+# '''
+
+# paper = '''
+#     _______
+# ---'   ____)____
+#           ______)
+#           _______)
+#          _______)
+# ---.__________)
+# '''
+
+# scissors = '''
+#     _______
+# ---'   ____)____
+#           ______)
+#        __________)
+#       (____)
+# ---.__(___)
+# '''
+
+# imagesList = [rock, paper, scissors]
+
+# userInput = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors. " ))
+# inputsList = {0, 1, 2}
+
+# # print(inputsList)
+
+# while userInput not in inputsList:
+#     userInput = int(input("!!! What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors. " ))
+#     if userInput in inputsList:
+#         break
+
+# print("User chooses:")
+# print(imagesList[userInput])
+
+# pcInput = random.randint(0,2)
+# # print("pc input: ",pcInput)
+# print("Computer chooses:")
+# print(imagesList[pcInput])
+
+# if userInput == pcInput:
+#     print("Draw")
+# else:
+#     if userInput == 0 and pcInput == 2:
+#         print("You won")
+#     elif userInput == 2 and pcInput == 0:
+#         print("PC won")
+#     elif userInput == 2 and pcInput == 1:
+#         print("You won")
+#     elif userInput == 1 and pcInput == 2:
+#         print("PC won")
+#     elif userInput == 1 and pcInput == 0:
+#         print("You won")
+#     elif userInput == 0 and pcInput == 1:
+#         print("PC won")
+    
+
+# 180, 124, 165, 173, 189, 169, 146
+
+# student_heights = input("Input a list of student heights ").split(",")
+# for n in range(0, len(student_heights)):
+#   student_heights[n] = int(student_heights[n])
+
+
+# print(round(sum(student_heights)/len(student_heights)))
+
+# sumHeights = 0
+# for i in student_heights:
+#     sumHeights += i   
+# print(round(sumHeights/len(student_heights)))
+
+# 78, 65, 89, 86, 55, 91, 64, 89
+
+student_scores = input("Input a list of student scores ").split(",")
+for n in range(0, len(student_scores)):
+  student_scores[n] = int(student_scores[n])
+print(student_scores)
+
+maxScore = student_scores[0]
+
+for i in student_scores:
+    if i > maxScore:
+        maxScore = i
+
+print(f"The highest score in the class is: {maxScore}")
 
 
 
