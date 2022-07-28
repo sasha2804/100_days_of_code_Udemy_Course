@@ -359,19 +359,23 @@
 
 # 78, 65, 89, 86, 55, 91, 64, 89
 
-student_scores = input("Input a list of student scores ").split(",")
-for n in range(0, len(student_scores)):
-  student_scores[n] = int(student_scores[n])
-print(student_scores)
+# student_scores = input("Input a list of student scores ").split(",")
+# for n in range(0, len(student_scores)):
+#   student_scores[n] = int(student_scores[n])
+# print(student_scores)
 
-maxScore = student_scores[0]
+# maxScore = student_scores[0]
 
-for i in student_scores:
-    if i > maxScore:
-        maxScore = i
+# for i in student_scores:
+#     if i > maxScore:
+#         maxScore = i
 
-print(f"The highest score in the class is: {maxScore}")
-
+# print(f"The highest score in the class is: {maxScore}")
+total = 0
+for i in range(2, 101):
+    if i%2 == 0:
+        total += i
+print(total)
 
 
 
