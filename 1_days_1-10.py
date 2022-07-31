@@ -491,8 +491,15 @@
 #         print("You won.")
 #     print(stages[qtyOfLives])
 
+def paint_calc(width, height, coverage):
+    numberOfCans = round((height * width)/coverage)
+    print(f"You'll need {numberOfCans} cans of paint.")
+    
+coverage = 5
+height = 2
+width = 4
 
-
+paint_calc(width, height, coverage)
 
         
      
