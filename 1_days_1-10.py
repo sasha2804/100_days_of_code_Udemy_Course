@@ -491,6 +491,7 @@
 #         print("You won.")
 #     print(stages[qtyOfLives])
 
+'''
 def paint_calc(width, height, coverage):
     numberOfCans = round((height * width)/coverage)
     print(f"You'll need {numberOfCans} cans of paint.")
@@ -500,6 +501,31 @@ height = 2
 width = 4
 
 paint_calc(width, height, coverage)
+'''
 
+
+def prime_checker(number):    
+    if number == 2:
+        print("It's a prime number.")
+
+    elif number !=2:
+        count = 1
+
+        for i in range(1,round(number/2+1)):
+
+            if number%i == 0:
+                count += 1
+
+        if count > 2:
+            print("It's not a prime number.") 
+        else:
+            print("It's a prime number.")
+
+
+
+
+
+n = int(input("Check this number: "))
+prime_checker(number=n)
         
      
