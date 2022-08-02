@@ -502,11 +502,10 @@
 # paint_calc(width, height, coverage)
 
 
-from pickletools import string1
-import string
 
 
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+'''
+#alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 # direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 # text = input("Type your message:\n").lower()
@@ -520,15 +519,15 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 # direction = "encode"
 # text = "civilization"
 
-direction = "decode"
-text = "jpcpspghapvu"
+#direction = "decode"
+#text = "jpcpspghapvu"
  
 
 # direction = "encode"
 # text = "prime"
 
-shift = 85
-str1 = ""
+#shift = 85
+#str1 = ""
 
 def encode(text, shift):
     global str1
@@ -556,6 +555,42 @@ elif direction == "decode":
     
 print(str1)
 
+
+#TODO-2: Call the caesar() function, passing over the 'text', 'shift' and 'direction' values.
+'''
+import art
+
+print(art.logo)
+
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
+
+str1 = ""
+
+def caesar(text, shift, direction):
+    global str1
+    if direction == "encode":
+         for i in text:
+            newPos = alphabet.index(i) + shift
+            if newPos >= len(alphabet):
+                shiftMult = newPos//len(alphabet)
+                newPos = newPos - len(alphabet)*shiftMult            
+            str1 += alphabet[newPos]
+
+    elif direction == "decode":
+        for i in text:
+            newPos = alphabet.index(i) - shift
+            if (shift + alphabet.index(i)) > len(alphabet):
+                shiftTemp = shift - alphabet.index(i)
+                newPos = shiftTemp%len(alphabet)*(-1)        
+            str1 += alphabet[newPos]
+
+caesar(text, shift, direction)
+   
+print(str1)
 
 
 
