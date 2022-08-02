@@ -491,15 +491,94 @@
 #         print("You won.")
 #     print(stages[qtyOfLives])
 
-def paint_calc(width, height, coverage):
-    numberOfCans = round((height * width)/coverage)
-    print(f"You'll need {numberOfCans} cans of paint.")
+# def paint_calc(width, height, coverage):
+#     numberOfCans = round((height * width)/coverage)
+#     print(f"You'll need {numberOfCans} cans of paint.")
     
-coverage = 5
-height = 2
-width = 4
+# coverage = 5
+# height = 2
+# width = 4
 
-paint_calc(width, height, coverage)
+# paint_calc(width, height, coverage)
 
+
+from pickletools import string1
+import string
+
+
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+# direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+# text = input("Type your message:\n").lower()
+# shift = int(input("Type the shift number:\n"))
+
+# direction = "encode"
+# text = "prime"
+# text = "qsjnf"
+# direction = "decode"
+
+# direction = "encode"
+# text = "civilization"
+
+direction = "decode"
+text = "jpcpspghapvu"
+ 
+
+# direction = "encode"
+# text = "prime"
+
+shift = 85
+str1 = ""
+
+def encode(text, shift):
+    global str1
+    for i in text:
+        newPos = alphabet.index(i) + shift
+        if newPos >= len(alphabet):
+            shiftMult = newPos//len(alphabet)
+            newPos = newPos - len(alphabet)*shiftMult            
+        str1 += alphabet[newPos]
+       
+
+def decode(text, shift):
+    global str1
+    for i in text:
+        newPos = alphabet.index(i) - shift
+
+        if (shift + alphabet.index(i)) > len(alphabet):
+            shiftTemp = shift - alphabet.index(i)
+            newPos = shiftTemp%len(alphabet)*(-1)
+        
+        str1 += alphabet[newPos]
+
+#TODO-1: Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
+
+if direction == "encode":
+    encode(text, shift)
+
+
+elif direction == "decode":
+    decode(text, shift)
+  
+
+
+print(str1)
+
+
+
+
+    #TODO-2: Inside the 'encrypt' function, shift each letter of the 'text' forwards in the alphabet by the shift amount and print the encrypted text.  
+    #e.g. 
+    #plain_text = "hello"
+    #shift = 5
+    #cipher_text = "mjqqt"
+    #print output: "The encoded text is mjqqt"
+
+    ##HINT: How do you get the index of an item in a list:
+    #https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-in-a-list
+
+    ##🐛Bug alert: What happens if you try to encode the word 'civilization'?🐛
+
+#TODO-3: Call the encrypt function and pass in the user inputs. You should be able to test the code and encrypt a message. 
         
      
