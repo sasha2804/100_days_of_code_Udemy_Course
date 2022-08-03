@@ -558,6 +558,7 @@ print(str1)
 
 #TODO-2: Call the caesar() function, passing over the 'text', 'shift' and 'direction' values.
 '''
+'''
 import art
 
 print(art.logo)
@@ -604,7 +605,39 @@ while trigger:
     programFlow = input('Type "yes" if you want to go again. Otherwise type "no": ')
     if programFlow == "no":
         break
+'''
+
+student_scores = {
+  "Harry": 81,
+  "Ron": 78,
+  "Hermione": 99, 
+  "Draco": 74,
+  "Neville": 62,
+}
+# 🚨 Don't change the code above 👆
+
+#TODO-1: Create an empty dictionary called student_grades.
+student_grades = {}
+
+
+#TODO-2: Write your code below to add the grades to student_grades.👇
+
+for x, y in student_scores.items():
+    if  100 >= y >= 91:
+        y = "Outstanding"
+    elif 90 >= y >= 81:
+        y =  "Exceeds Expectations"
+    elif 80 >= y >= 71:
+        y = "Acceptable"
+    elif y <= 70:
+        y = "Fail"
     
+    student_grades[x] = y
+   
+
+# 🚨 Don't change the code below 👇
+print(student_grades)
+
 
 
         
