@@ -564,36 +564,48 @@ print(art.logo)
 
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
-
-str1 = ""
+programFlow = "yes"
+trigger = True
 
 def caesar(text, shift, direction):
-    global str1
+    str1 = ""
     if direction == "encode":
-         for i in text:
-            newPos = alphabet.index(i) + shift
-            if newPos >= len(alphabet):
-                shiftMult = newPos//len(alphabet)
-                newPos = newPos - len(alphabet)*shiftMult            
-            str1 += alphabet[newPos]
+        for i in text:
+            if i not in alphabet:
+                str1 += i
+            else: 
+                newPos = alphabet.index(i) + shift
+                if newPos >= len(alphabet):
+                    shiftMult = newPos//len(alphabet)
+                    newPos = newPos - len(alphabet)*shiftMult            
+                str1 += alphabet[newPos]        
 
     elif direction == "decode":
         for i in text:
-            newPos = alphabet.index(i) - shift
-            if (shift + alphabet.index(i)) > len(alphabet):
-                shiftTemp = shift - alphabet.index(i)
-                newPos = shiftTemp%len(alphabet)*(-1)        
-            str1 += alphabet[newPos]
+            if i not in alphabet:
+                str1 += i
+            else:
+                newPos = alphabet.index(i) - shift
+                if (shift + alphabet.index(i)) > len(alphabet):
+                    shiftTemp = shift - alphabet.index(i)
+                    newPos = shiftTemp%len(alphabet)*(-1)        
+                str1 += alphabet[newPos]
+    
+    return(f'Here is the {direction}d result: {str1}')
 
-caesar(text, shift, direction)
-   
-print(str1)
+
+while trigger:
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+
+    print(caesar(text, shift, direction)) 
+
+    programFlow = input('Type "yes" if you want to go again. Otherwise type "no": ')
+    if programFlow == "no":
+        break
+    
 
 
-
-   
         
      
