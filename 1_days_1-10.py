@@ -614,6 +614,9 @@ student_scores = {
   "Draco": 74,
   "Neville": 62,
 }
+
+# DAY 9
+
 # 🚨 Don't change the code above 👆
 
 #TODO-1: Create an empty dictionary called student_grades.
