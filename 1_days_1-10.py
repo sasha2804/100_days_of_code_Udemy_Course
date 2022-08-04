@@ -607,6 +607,8 @@ while trigger:
         break
 '''
 
+# DAY 9
+'''
 student_scores = {
   "Harry": 81,
   "Ron": 78,
@@ -615,7 +617,7 @@ student_scores = {
   "Neville": 62,
 }
 
-# DAY 9
+
 # 🚨 Don't change the code above 👆
 
 # #TODO-1: Create an empty dictionary called student_grades.
@@ -651,6 +653,97 @@ for key in dict:
 
 print(dict)
 
+'''
+
+
+from itertools import count
+
+
+travel_log = [
+{
+  "country": "France",
+  "visits": 12,
+  "cities": ["Paris", "Lille", "Dijon"]
+},
+{
+  "country": "Germany",
+  "visits": 5,
+  "cities": ["Berlin", "Hamburg", "Stuttgart"]
+},
+]
+
+
+'''
+#🚨 Do NOT change the code above
+
+#TODO: Write the function that will allow new countries
+#to be added to the travel_log. 👇
+
+
+def add_new_country(countryName, nrOfVisits, cities):
+    global travel_log
+    travel_log.append({"country": countryName, "visits": nrOfVisits, "cities": cities})
+ 
+#thisdict["color"] = "red"
+
+#🚨 Do not change the code below
+add_new_country("Ukraine", 12, ["Kyiv", "Kharkiv", "Odessa"])
+add_new_country("Germany", 2, ["Berlin", "Rostok", "Stuttgart"])
+
+print(travel_log)
+'''
+
+import os
+import art
+
+print(art.logo)
+print("Welcome to the secret auction program.")
+bid = dict()
+trigger = True   
+
+
+while trigger:
+    name = input("What is your name?: ")
+    bidAmount = int(input(("What is your bid?: $")))
+    bid[name] = bidAmount
+    bidders = input('Are there any other bidders, Type "yes" or "no": ')
+
+    if bidders == "no":        
+        k = list(bid.keys())  #keys list       
+        v = list(bid.values()) #values list       
+        maxVal = max(v)
+        ind = v.index(maxVal)
+        nameWinner = k[ind]
+        os.system('cls') #clear console for the next bidder
+        print(f"The is winner is {nameWinner} with a bid ${maxVal}")
+        break            
+    os.system('cls') #clear console for the next bidder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+def clearConsole():
+    
+    command = 'clear'
+    if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
+        command = 'cls'
+    
+    os.system('cls')
+clearConsole()
+'''
 
         
      
