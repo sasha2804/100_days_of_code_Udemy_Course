@@ -616,31 +616,40 @@ student_scores = {
 }
 
 # DAY 9
-
 # 🚨 Don't change the code above 👆
 
-#TODO-1: Create an empty dictionary called student_grades.
-student_grades = {}
-
-
-#TODO-2: Write your code below to add the grades to student_grades.👇
-
-for x, y in student_scores.items():
-    if  100 >= y >= 91:
-        y = "Outstanding"
-    elif 90 >= y >= 81:
-        y =  "Exceeds Expectations"
-    elif 80 >= y >= 71:
-        y = "Acceptable"
-    elif y <= 70:
-        y = "Fail"
+# #TODO-1: Create an empty dictionary called student_grades.
+# student_grades = {}
+# #TODO-2: Write your code below to add the grades to student_grades.👇
+# for x, y in student_scores.items():
+#     if  100 >= y >= 91:
+#         y = "Outstanding"
+#     elif 90 >= y >= 81:
+#         y =  "Exceeds Expectations"
+#     elif 80 >= y >= 71:
+#         y = "Acceptable"
+#     elif y <= 70:
+#         y = "Fail"
     
-    student_grades[x] = y
+#     student_grades[x] = y
    
 
-# 🚨 Don't change the code below 👇
-print(student_grades)
+# # 🚨 Don't change the code below 👇
+# print(student_grades)
 
+# nested dictionary
+
+
+dict = {
+    "a": 1,
+    "b": 2,
+    "c": 3,
+}
+
+for key in dict:
+    dict[key] += 1
+
+print(dict)
 
 
         
