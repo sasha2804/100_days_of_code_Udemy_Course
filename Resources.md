@@ -18,3 +18,6 @@ https://www.askpython.com/
 Learning resource
 https://www.khanacademy.org/
 
+
+List of pet projects
+https://myresumedash.com/list-of-pet-projects-to-show-off-to-employers/ 
