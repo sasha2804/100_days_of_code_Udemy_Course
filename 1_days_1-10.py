@@ -693,6 +693,8 @@ add_new_country("Germany", 2, ["Berlin", "Rostok", "Stuttgart"])
 print(travel_log)
 '''
 
+'''
+
 import os
 import art
 
@@ -706,7 +708,7 @@ while trigger:
     name = input("What is your name?: ")
     bidAmount = int(input(("What is your bid?: $")))
     bid[name] = bidAmount
-    bidders = input('Are there any other bidders, Type "yes" or "no": ')
+    bidders = input('Are there any other bidders, Type "yes" or "no": ').lower()
 
     if bidders == "no":        
         k = list(bid.keys())  #keys list       
@@ -718,6 +720,15 @@ while trigger:
         print(f"The is winner is {nameWinner} with a bid ${maxVal}")
         break            
     os.system('cls') #clear console for the next bidder
+
+'''
+
+
+def format_name(f_name, l_name):
+    return(f_name.title(), l_name.title())
+
+
+print(format_name("alex", "cooper"))
 
 
 
