@@ -656,7 +656,10 @@ print(dict)
 '''
 
 
+from asyncio.streams import FlowControlMixin
+from http.client import NOT_EXTENDED
 from itertools import count
+from math import fabs
 
 
 travel_log = [
@@ -723,12 +726,169 @@ while trigger:
 
 '''
 
+# DAY 10
 
+'''
 def format_name(f_name, l_name):
+    
     return(f_name.title(), l_name.title())
 
 
 print(format_name("alex", "cooper"))
+# print(format_name("",""))
+'''
+
+
+# year = 1999
+# if year%4 != 0:
+#     print("Not leap")
+# elif year%100 != 0:
+#     print("Leap")
+# elif year%400 == 0:
+#     print("Leap")
+# else:
+#     print("Not leap")
+
+
+'''
+def is_leap(year):
+    if year%4 != 0:
+        return False
+    elif year%100 != 0:
+        return True
+    elif year%400 == 0:
+        return True 
+    else:
+        return False 
+
+
+def days_in_month(year, month):
+    month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]    
+    if month < 12 and month >= 1 and len(str(year)) <= 4:
+        if month == 2 and is_leap(year):
+            return (month_days[month-1] + 1)             
+        return(month_days[month-1])  
+    else:
+        raise Exception("Input is not correct   ")
+
+  
+  
+#🚨 Do NOT change any of the code below 
+year = int(input("Enter a year: "))
+month = int(input("Enter a month: "))
+days = days_in_month(year, month)
+print(days)
+'''
+
+# DAY 10 calculator method 1
+
+# import os
+# result = 0
+# trigger = True
+# trigger1 = True
+
+
+# while trigger:
+#     if result == 0:
+#         firstNum = float(input("What's the first number?: "))
+#     operationSymb = (input('''+\n-\n*\n/\nPick an operation: '''))
+#     nextNum = float(input("What's the next number?: "))
+
+#     resultTemp = result
+
+#     if operationSymb == "+":
+#         result = result + firstNum + nextNum
+#     elif operationSymb == "-":
+#         result = (result + firstNum) - nextNum
+#     elif operationSymb == "*":
+#         result = (result + firstNum) * nextNum
+#     else:
+#         result = (result + firstNum)/nextNum    
+
+#     if trigger1 == True:
+#         combinedNum = firstNum
+#     else:
+#         combinedNum = resultTemp
+
+#     print(f"{combinedNum} {operationSymb} {nextNum} = {result}")
+#     trigger1 = False
+
+#     programFlow = input(f"Type 'y' to continue calculation with  {result}, or type 'n' to start a new calculation: ")
+
+#     if programFlow == "n":
+#         result = 0
+#         firstNum = 0
+#         nextNum = 0
+#         trigger1 = True
+#         os.system('cls') #clear console for the next operation
+#     elif programFlow == "y":
+#         firstNum = 0
+ 
+    
+# DAY 10 calculator method 2
+
+import os
+from art import logo
+
+def add(num1, num2):
+    return num1 + num2
+
+def subtract(num1, num2):
+    return num1 - num2
+
+def multiply(num1, num2):
+    return num1 * num2
+
+def divide(num1, num2):
+    return num1 / num2
+
+operationsList = {
+    "+": add,
+    "-": subtract,
+    "*": multiply,
+    "/": divide
+}
+
+trigger = True
+
+def calculatorStart():  
+    print(logo)
+
+    firstNum = float(input("What's the first number?: "))
+    for i in operationsList:
+        print(i)
+
+    trigger = True
+
+    while trigger:
+        operation = input("Pick an operation: ")
+        nextNum = float(input("What's the next number?: "))
+        calcFunc = operationsList[operation]
+        result = calcFunc(firstNum, nextNum)
+        print(f"{firstNum} {operation} {nextNum} = {result}")
+
+        flow = input(f"Type 'y' to continue calculating with {result}, or type 'n' to start a new calculation: ")
+
+        if flow == "y":
+            firstNum = result
+        else:
+            trigger = False
+            os.system('cls')
+            calculatorStart()
+            
+    
+calculatorStart()
+
+
+
+
+
+
+
+
+
+
+
 
 
 
