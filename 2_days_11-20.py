@@ -234,18 +234,23 @@ import os
 import lower_higher_art
 from lower_higher_data import data
 
-
 gameGoOn = True
 score = 0
 tempList = []
 
+def checkScore (playersGuess, aScore, bScore):
+  if playersGuess == "a" and aScore > bScore:
+    return "correct a"
+  elif playersGuess == "b" and bScore > aScore:
+    return "correct b"
+  else:
+    return "incorrect"
 
-while gameGoOn:
-  print(lower_higher_art.logo)
+while gameGoOn:  
   if score == 0:
+    print(lower_higher_art.logo)
     upperLim = 2
   else: upperLim == 1
-
   for i in range(0, upperLim):  
     randIndex = random.randint(0, len(data)-1)
     tempList.append(data[randIndex])
@@ -263,22 +268,24 @@ while gameGoOn:
 
   playersGuess = input("Who has more followers? Type 'A' of 'B':").lower()
 
-  if playersGuess == "a" and aScore < bScore or playersGuess == 'b' and bScore < aScore:
-    score = 0
-    print(f"Sorry that is wrong. Final score: {score}")
-    gameGoOn = False
-
-  elif playersGuess == "a" and aScore > bScore:
+  if checkScore(playersGuess, aScore, bScore) == "correct a":
     score += 1
     os.system('cls')
-    print(f"Your are right! Current score: {score}")  
-    tempList.remove(tempList[1])   
-  elif playersGuess == "b" and bScore > aScore:
+    print(f"Your are right! Current score: {score}") 
+    tempList.remove(tempList[1])
+  elif checkScore(playersGuess, aScore, bScore) == "correct b":
     score += 1
     os.system('cls')
     print(f"Your are right! Current score: {score}") 
     tempList[0] = tempList[1]
     tempList.remove(tempList[1])
+  else:
+    score = 0
+    print(f"Sorry that is wrong. Final score: {score}")
+    gameGoOn = False
 
-    
+  
+
+
+  
 
