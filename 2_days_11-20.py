@@ -220,72 +220,195 @@ while input("Do you want to play a game of Blackjack? Type 'y' of 'n': ") == "y"
 
 #  DAY 14
 
-# lower_higher_data.py
-# lower_higher_art.py
+# import random
+# import os
+# import lower_higher_art
+# from lower_higher_data import data
+
+# gameGoOn = True
+# score = 0
+# tempList = []
+
+# def checkScore (playersGuess, aScore, bScore):
+#   if playersGuess == "a" and aScore > bScore:
+#     return "correct a"
+#   elif playersGuess == "b" and bScore > aScore:
+#     return "correct b"
+#   else:
+#     return "incorrect"
+
+# while gameGoOn:  
+#   if score == 0:
+#     print(lower_higher_art.logo)
+#     upperLim = 2
+#   else: upperLim == 1
+#   for i in range(0, upperLim):  
+#     randIndex = random.randint(0, len(data)-1)
+#     tempList.append(data[randIndex])
+#     data.remove(data[randIndex])
+
+#   print(f"Compare A: {tempList[0]['name']}, a {tempList[0]['description']}, from {tempList[0]['country']}")
+#   print(lower_higher_art.vs)
+#   print(f"Agaist B: {tempList[1]['name']}, a {tempList[1]['description']}, from {tempList[1]['country']}")
+  
+#   aScore = tempList[0]['follower_count']
+#   bScore = tempList[1]['follower_count']
+
+#   print(aScore)
+#   print(bScore)
+
+#   playersGuess = input("Who has more followers? Type 'A' of 'B':").lower()
+
+#   if checkScore(playersGuess, aScore, bScore) == "correct a":
+#     score += 1
+#     os.system('cls')
+#     print(f"Your are right! Current score: {score}") 
+#     tempList.remove(tempList[1])
+#   elif checkScore(playersGuess, aScore, bScore) == "correct b":
+#     score += 1
+#     os.system('cls')
+#     print(f"Your are right! Current score: {score}") 
+#     tempList[0] = tempList[1]
+#     tempList.remove(tempList[1])
+#   else:
+#     score = 0
+#     print(f"Sorry that is wrong. Final score: {score}")
+#     gameGoOn = False
 
 
-# fruits = ['apple', 'banana', 'cherry']
-# print(fruits)
-# fruits.remove("banana")
-# print(fruits[1])
 
-import random
-import os
-import lower_higher_art
-from lower_higher_data import data
+  # DAY 15
 
-gameGoOn = True
-score = 0
-tempList = []
+'''
+Full tank
+Water: 300 ml
+Milk: 200 ml
+Cofee: 100 g
+Money: 0$
 
-def checkScore (playersGuess, aScore, bScore):
-  if playersGuess == "a" and aScore > bScore:
-    return "correct a"
-  elif playersGuess == "b" and bScore > aScore:
-    return "correct b"
+quarters = $0.25, dimes = $0.10, nickles = $0.05, pennies = $0.01
+
+'''
+
+# TODO Money handling function
+# TODO Ingredients handling function
+# TODO Drink preparation function
+# TODO General cycle of the program
+
+
+
+# from random import choices
+
+trig = True
+
+resources = {'water':300, 'milk': 200, 'coffee': 100}
+drinksList = ("espresso", "latte", "cappuccino")
+moneyCounter = 0
+
+menu = {"espresso": {}}
+MENU = {
+    "espresso": {
+        "ingredients": {
+            "water": 50,
+            "coffee": 18,
+        },
+        "cost": 1.5,
+    },
+    "latte": {
+        "ingredients": {
+            "water": 200,
+            "milk": 150,
+            "coffee": 24,
+        },
+        "cost": 2.5,
+    },
+    "cappuccino": {
+        "ingredients": {
+            "water": 250,
+            "milk": 100,
+            "coffee": 24,
+        },
+        "cost": 3.0,
+    }
+}
+
+
+def checkResources(drink): # this func checks if resources are sufficient to make ordered drink
+  for i in drink:
+    if drink[i] > resources[i]:
+      return (i)
+  return True
+
+def paymentFunc(): # this function handles payment procedure
+  # remark: quarters = $0.25, dimes = $0.10, nickles = $0.05, pennies = $0.01  
+  amount = int(input("how many quarters?: "))*0.25
+  amount += int(input("how many dimes?: "))*0.1
+  amount += int(input("how many nickles?: "))*0.05
+  amount += int(input("how many pennies?: "))*0.01
+  return amount    
+
+def prepareDrink(drink):# this func is responsible for drink preparing
+  choice = MENU[drink]["ingredients"]
+  for i in choice:   
+    resources[i] = resources[i] - choice[i]    
+  return (f"Here is your {drink}. Enjoy!") 
+    
+
+  
+while trig: # main loop of the program
+  userIn = input(f"What would you like? ({drinksList[0]}/{drinksList[1]}/{drinksList[2]}): ").lower()
+  if userIn == "off":    
+    trig = False    
+  elif userIn == "report":
+    print(resources)
+    print(f"Money: {moneyCounter}")
+
+    continue
+  elif userIn not in drinksList:
+    raise Exception("Entered name of drink is not correct !!!")
   else:
-    return "incorrect"
-
-while gameGoOn:  
-  if score == 0:
-    print(lower_higher_art.logo)
-    upperLim = 2
-  else: upperLim == 1
-  for i in range(0, upperLim):  
-    randIndex = random.randint(0, len(data)-1)
-    tempList.append(data[randIndex])
-    data.remove(data[randIndex])
-
-  print(f"Compare A: {tempList[0]['name']}, a {tempList[0]['description']}, from {tempList[0]['country']}")
-  print(lower_higher_art.vs)
-  print(f"Agaist B: {tempList[1]['name']}, a {tempList[1]['description']}, from {tempList[1]['country']}")
-  
-  aScore = tempList[0]['follower_count']
-  bScore = tempList[1]['follower_count']
-
-  print(aScore)
-  print(bScore)
-
-  playersGuess = input("Who has more followers? Type 'A' of 'B':").lower()
-
-  if checkScore(playersGuess, aScore, bScore) == "correct a":
-    score += 1
-    os.system('cls')
-    print(f"Your are right! Current score: {score}") 
-    tempList.remove(tempList[1])
-  elif checkScore(playersGuess, aScore, bScore) == "correct b":
-    score += 1
-    os.system('cls')
-    print(f"Your are right! Current score: {score}") 
-    tempList[0] = tempList[1]
-    tempList.remove(tempList[1])
-  else:
-    score = 0
-    print(f"Sorry that is wrong. Final score: {score}")
-    gameGoOn = False
+    drink = MENU[userIn]
+    check = checkResources(drink["ingredients"])
+    if check == True: # call resousces check func    
+      moneyPaid = paymentFunc() # call payment handling func
+      if moneyPaid > drink["cost"]:
+        change = moneyPaid - drink["cost"]
+        print(f"Here is ${change} in change.")
+        moneyCounter += drink["cost"] 
+        print(prepareDrink(userIn)) # call drink prepare func        
+      elif moneyPaid == drink['cost']:
+        moneyCounter += drink["cost"]
+        print(prepareDrink(userIn))  # call drink prepare func      
+      else:
+        print("Sorry that's not enough money. Money refunded.")
+        moneyPaid = 0
+    else:
+      print(f"​Sorry there is not enough {check}.")   
 
   
+   
+        
+        
+     
+      
+      
+    
+   
 
 
-  
+    
+
+  # trig = False
+
+
+
+
+# TODO make resources check
+# TODO make prepare drink function
+# TODO make money count function
+
+
+
+
+
 

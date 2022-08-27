@@ -454,7 +454,18 @@
 
 # print(passString)
 
-print(12%8)
+
+
+thisdict = {
+
+  "brand": "Ford",
+  "model": {"car":"Mustang"},
+  "year": 1964
+}
+x = thisdict["model"]["car"]
+
+print(x)
+
 
 
 
