@@ -289,13 +289,10 @@ Money: 0$
 quarters = $0.25, dimes = $0.10, nickles = $0.05, pennies = $0.01
 
 '''
-
 # TODO Money handling function
 # TODO Ingredients handling function
 # TODO Drink preparation function
 # TODO General cycle of the program
-
-
 
 # from random import choices
 
@@ -388,24 +385,7 @@ while trig: # main loop of the program
   
    
         
-        
-     
-      
-      
-    
-   
-
-
-    
-
-  # trig = False
-
-
-
-
-# TODO make resources check
-# TODO make prepare drink function
-# TODO make money count function
+# DAY 16
 
 
 
