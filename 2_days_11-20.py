@@ -288,7 +288,7 @@ Money: 0$
 
 quarters = $0.25, dimes = $0.10, nickles = $0.05, pennies = $0.01
 
-'''
+
 # TODO Money handling function
 # TODO Ingredients handling function
 # TODO Drink preparation function
@@ -382,7 +382,7 @@ while trig: # main loop of the program
     else:
       print(f"​Sorry there is not enough {check}.")   
 
-  
+'''
    
         
 # DAY 16
