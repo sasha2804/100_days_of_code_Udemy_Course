@@ -387,8 +387,24 @@ while trig: # main loop of the program
         
 # DAY 16
 
+from turtle import Turtle, Screen
 
+timmy = Turtle()
+print(timmy)
+timmy.shape("turtle")
+timmy.color("green")
+timmy.forward(250)
+timmy.right(45)
+timmy.forward(50)
+timmy.right(135)
+timmy.forward(200)
+timmy.right(90)
+timmy.forward(250)
+timmy.shapesize(1,1,10)
 
+my_screen =  Screen()
+print(my_screen.canvheight)
+my_screen.exitonclick()
 
 
 
