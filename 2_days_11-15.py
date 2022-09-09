@@ -279,14 +279,14 @@ while input("Do you want to play a game of Blackjack? Type 'y' of 'n': ") == "y"
 
   # DAY 15
 
-'''
-Full tank
-Water: 300 ml
-Milk: 200 ml
-Cofee: 100 g
-Money: 0$
 
-quarters = $0.25, dimes = $0.10, nickles = $0.05, pennies = $0.01
+# Full tank
+# Water: 300 ml
+# Milk: 200 ml
+# Cofee: 100 g
+# Money: 0$
+
+# quarters = $0.25, dimes = $0.10, nickles = $0.05, pennies = $0.01
 
 
 # TODO Money handling function
@@ -359,7 +359,6 @@ while trig: # main loop of the program
   elif userIn == "report":
     print(resources)
     print(f"Money: {moneyCounter}")
-
     continue
   elif userIn not in drinksList:
     raise Exception("Entered name of drink is not correct !!!")
@@ -382,29 +381,29 @@ while trig: # main loop of the program
     else:
       print(f"​Sorry there is not enough {check}.")   
 
-'''
+
    
         
-# DAY 16
+# # DAY 16
 
-from turtle import Turtle, Screen
+# from turtle import Turtle, Screen
 
-timmy = Turtle()
-print(timmy)
-timmy.shape("turtle")
-timmy.color("green")
-timmy.forward(250)
-timmy.right(45)
-timmy.forward(50)
-timmy.right(135)
-timmy.forward(200)
-timmy.right(90)
-timmy.forward(250)
-timmy.shapesize(1,1,10)
+# timmy = Turtle()
+# print(timmy)
+# timmy.shape("turtle")
+# timmy.color("green")
+# timmy.forward(250)
+# timmy.right(45)
+# timmy.forward(50)
+# timmy.right(135)
+# timmy.forward(200)
+# timmy.right(90)
+# timmy.forward(250)
+# timmy.shapesize(1,1,10)
 
-my_screen =  Screen()
-print(my_screen.canvheight)
-my_screen.exitonclick()
+# my_screen =  Screen()
+# print(my_screen.canvheight)
+# my_screen.exitonclick()
 
 
 
