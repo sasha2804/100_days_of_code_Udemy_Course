@@ -1,5 +1,5 @@
 # DAY 16
 
-from menu import Menu, MenuItem
-from coffee_maker import CoffeeMaker
-from money_machine import MoneyMachine
+from menu_day_16 import Menu, MenuItem
+from coffee_maker_day_16 import CoffeeMaker
+from money_machine_day_16 import MoneyMachine
