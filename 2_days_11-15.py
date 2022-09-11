@@ -279,6 +279,7 @@ while input("Do you want to play a game of Blackjack? Type 'y' of 'n': ") == "y"
 
   # DAY 15
 
+'''
 
 # Full tank
 # Water: 300 ml
@@ -406,4 +407,26 @@ while trig: # main loop of the program
 # my_screen.exitonclick()
 
 
+'''
 
+
+# for number in range(1, 101):
+#   if number % 3 == 0 and number % 5 == 0:
+#     print("FizzBuzz")
+#   elif number % 3 == 0 and number % 5 != 0:
+#     print("Fizz")
+#   elif number % 5 == 0 and number % 3 != 0:
+#     print("Buzz")
+#   else:
+#     print([number])
+
+
+for number in range(1, 101):
+  if number % 3 == 0 and number % 5 == 0:
+    print("FizzBuzz")
+  elif number % 3 == 0:
+    print("Fizz")
+  elif number % 5 == 0:
+    print("Buzz")
+  else:
+    print([number])
