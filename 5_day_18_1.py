@@ -43,8 +43,25 @@ screen.colormode(255)
 #     # timmy_turtle.right(rd.choice(heading))
 #     timmy_turtle.setheading(rd.choice(heading))
 #     timmy_turtle.forward(rd.choice(distance))
-   
-   
+
+
+# spirograph
+
+# circles_qty = 72
+# angle = 360/circles_qty
+# timmy_turtle.speed(0)
+
+# for i in range(circles_qty):
+#     red = rd.randint(0,255)
+#     green = rd.randint(0,255)
+#     blue = rd.randint(0,255)
+#     colour_code = (red,green,blue)
+#     timmy_turtle.pencolor(colour_code)   
+
+#     timmy_turtle.circle(100)
+#     timmy_turtle.left(angle)
+
+
 
 
 screen.exitonclick()
