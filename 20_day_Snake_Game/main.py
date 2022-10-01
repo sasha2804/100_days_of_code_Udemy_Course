@@ -1,4 +1,4 @@
-from turtle import Turtle, Screen
+from turtle import Turtle, Screen, left
 import time
 from snake import Snake
 
@@ -8,15 +8,29 @@ screen.setup(width=600, height=600)
 screen.bgcolor('black')
 screen.title('Korotushko Snake Game')
 screen.tracer(0)
+screen.listen()
+
+
 
 snake = Snake()
+
+screen.onkey(snake.up,'Up')
+screen.onkey(snake.down,'Down')
+screen.onkey(snake.left,'Left')
+screen.onkey(snake.right,'Right')
+
 
 game_is_on = True
 
 while game_is_on:
     screen.update()
     time.sleep(0.1)
-    snake.move_snake()  
+    snake.move_snake()
+
+    # screen.onkey(snake.up,'Up')
+    # screen.onkey(snake.down,'Down')
+    # screen.onkey(snake.left(),'Left')
+    # screen.onkey(snake.right,'Right')  
 
 
 screen.exitonclick()
