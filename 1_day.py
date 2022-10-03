@@ -456,18 +456,20 @@
 
 
 
-thisdict = {
+# thisdict = {
 
-  "brand": "Ford",
-  "model": {"car":"Mustang"},
-  "year": 1964
-}
-x = thisdict["model"]["car"]
+#   "brand": "Ford",
+#   "model": {"car":"Mustang"},
+#   "year": 1964
+# }
+# x = thisdict["model"]["car"]
 
-print(x)
+# print(x)
 
 
+lst = [1,2,3,4,5]
 
+print(lst[-1])
 
 
 
