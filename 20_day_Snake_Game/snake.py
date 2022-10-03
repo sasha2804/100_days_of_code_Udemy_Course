@@ -14,6 +14,7 @@ class Snake:
         self.head = self.snake[0]
         self.head.setheading(0)
         self.head.color('green')
+        self.head.speed('slowest')
 
     def create_snake(self):
         for position in START_POS:
@@ -23,14 +24,18 @@ class Snake:
             new_segm.penup()
             new_segm.goto(position)
             self.snake.append(new_segm)            
-            new_segm.speed(1)
+            new_segm.speed('slowest')
 
             print(self.snake)
     def move_snake(self):
         for seg_num in range(len(self.snake)-1, 0, -1):
             new_x = self.snake[seg_num-1].xcor()
             new_y = self.snake[seg_num-1].ycor()
-            self.snake[seg_num].goto(new_x, new_y)            
+            seg_new = self.snake[seg_num]
+            seg_new.goto(new_x, new_y)
+            # new_pos = self.snake[seg_num].goto(new_x, new_y)
+
+        self.head.speed('slowest')            
         self.head.forward(STEP)
 
     def up(self):
