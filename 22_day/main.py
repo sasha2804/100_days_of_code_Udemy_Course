@@ -23,22 +23,22 @@ Y_COMMON = 250
 score_left = Score((X_LEFT, Y_COMMON))
 score_right = Score((X_RIGHT, Y_COMMON))
 
-
-
 game_is_on = True
 reset_trig = True
 
-screen.onkey(paddle_right.move_up,'Up')
-screen.onkey(paddle_right.move_down,'Down')
-screen.onkey(paddle_left.move_up, 'A')
-screen.onkey(paddle_left.move_down,'Y')
-screen.onkey(paddle_left.move_up, 'a')
-screen.onkey(paddle_left.move_down,'y')
+screen.onkeypress(paddle_right.move_up,'Up')
+screen.onkeypress(paddle_right.move_down,'Down')
+# screen.onkey(paddle_right.move_up,'Up')
+# screen.onkey(paddle_right.move_down,'Down')
+screen.onkeypress(paddle_left.move_up, 'A')
+screen.onkeypress(paddle_left.move_down,'Y')
+screen.onkeypress(paddle_left.move_up, 'a')
+screen.onkeypress(paddle_left.move_down,'y')
 
 while reset_trig:
     game_is_on = True
     while game_is_on:
-        time.sleep(0.03)
+        time.sleep(ball.move_speed)
         ball.move()
         screen.update()        
         if ball.ycor() >= 280 or ball.ycor() <= -280:
@@ -52,13 +52,18 @@ while reset_trig:
             score_left.score += 1
             score_left.scoreboard()
             ball.ball_reset()
-            ball.bounce_x()
+            ball.bounce_x()            
         
         if ball.xcor() < -350: # detect if left paddle misses            
             score_right.score += 1
             score_right.scoreboard()
             ball.ball_reset()
             ball.bounce_x()
+            
+
+        
+        
+
     
 
 
