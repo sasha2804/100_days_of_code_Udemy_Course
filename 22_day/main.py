@@ -1,7 +1,7 @@
-import imp
 from turtle import Screen, Turtle
 from paddles import Paddle, Net
 from ball import Ball
+from score import Score
 import time
 
 screen = Screen()
@@ -16,25 +16,60 @@ paddle_right = Paddle((350,0))
 net = Net()
 ball = Ball()
 
+X_LEFT = -30
+X_RIGHT = 30
+Y_COMMON = 250
 
+score_left = Score((X_LEFT, Y_COMMON))
+score_right = Score((X_RIGHT, Y_COMMON))
 
 
 
 game_is_on = True
+reset_trig = True
 
-# for i in range(150):
-#     ball.move()
+screen.onkey(paddle_right.move_up,'Up')
+screen.onkey(paddle_right.move_down,'Down')
+screen.onkey(paddle_left.move_up, 'A')
+screen.onkey(paddle_left.move_down,'Y')
+screen.onkey(paddle_left.move_up, 'a')
+screen.onkey(paddle_left.move_down,'y')
 
-while game_is_on:
-    time.sleep(0.01)
-    ball.move()
-    screen.update()
-    screen.onkey(paddle_right.move_up,'Up')
-    screen.onkey(paddle_right.move_down,'Down')
-    screen.onkey(paddle_left.move_up, 'A')
-    screen.onkey(paddle_left.move_down,'Y')
-    screen.onkey(paddle_left.move_up, 'a')
-    screen.onkey(paddle_left.move_down,'y')
+while reset_trig:
+    game_is_on = True
+    while game_is_on:
+        time.sleep(0.03)
+        ball.move()
+        screen.update()        
+        if ball.ycor() >= 280 or ball.ycor() <= -280:
+            ball.bounce_y()    
+        if ball.xcor() >= 330 and ball.distance(paddle_right) < 50:
+            ball.bounce_x()
+        if ball.xcor() <= -330 and ball.distance(paddle_left) < 50:
+            ball.bounce_x()
+        
+        if ball.xcor() > 350: # detect if right paddle misses            
+            score_left.score += 1
+            score_left.scoreboard()
+            ball.ball_reset()
+            ball.bounce_x()
+        
+        if ball.xcor() < -350: # detect if left paddle misses            
+            score_right.score += 1
+            score_right.scoreboard()
+            ball.ball_reset()
+            ball.bounce_x()
+    
+
+
+# while reset_trig:
+#     game_is_on = True
+#     ball.bounce_x()
+#     reset_trig = False
+
+
+
+
 
     # ball.move()
 

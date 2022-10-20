@@ -11,11 +11,14 @@ class Paddle(Turtle):
 
     def move_up(self):
         new_y = self.ycor() + 20
-        self.goto(self.xcor(), new_y)        
+        if new_y < 280:
+            self.goto(self.xcor(), new_y)
+                
 
     def move_down(self):
         new_y = self.ycor() - 20
-        self.goto(self.xcor(), new_y)
+        if new_y > -260:
+            self.goto(self.xcor(), new_y)
 
 
 class Net:
