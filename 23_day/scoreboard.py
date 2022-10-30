@@ -3,11 +3,10 @@ from turtle import Turtle
 FONT = ("Courier", 14, "normal")
 ALIGN = 'center'
 
-
 class Scoreboard(Turtle):
     def __init__(self):
         super().__init__()
-        self.score = 0
+        self.score = 1
         self.penup()
         self.goto(0,270)
         self.hideturtle()
