@@ -30,23 +30,23 @@
 # yugo.exclaim()
 # yugo.need_a_push()
 
-class Person():
-    def __init__(self, name, test_name):
-        self.name = name
-        self.test_name = test_name
+# class Person():
+#     def __init__(self, name, test_name):
+#         self.name = name
+#         self.test_name = test_name
 
 
-class EmailPerson(Person):
-    def __init__(self, name, email, test_name):
-        super().__init__(name, test_name)
-        self.email = email
+# class EmailPerson(Person):
+#     def __init__(self, name, email, test_name):
+#         super().__init__(name, test_name)
+#         self.email = email
 
-kok = Person('kok', 'test1')
-bob = EmailPerson('Bob', 'bla@gmail.com', 'test')
-# 
-print(bob.name)
-print(bob.email)
-print(bob.test_name)
+# kok = Person('kok', 'test1')
+# bob = EmailPerson('Bob', 'bla@gmail.com', 'test')
+# # 
+# print(bob.name)
+# print(bob.email)
+# print(bob.test_name)
 # print(kok.name)
 
 
@@ -75,3 +75,8 @@ print(bob.test_name)
 
 # page 205 proceed
 
+str1 = '2020-12-11 10:44:41.635'
+
+str2 = str1[11:16]
+
+print(str2)
