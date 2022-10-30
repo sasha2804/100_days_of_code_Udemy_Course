@@ -4,6 +4,12 @@ from snake import Snake
 from food import Food
 from score import Score
 
+file = open('my_score.txt')
+
+content = file.read()
+
+print(content)
+
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor('black')
@@ -29,23 +35,21 @@ while game_is_on:
     time.sleep(0.1)
     snake.move_snake()
     if snake.head.distance(food) < 15:
-        food.refresh()#
+        food.refresh()
         snake.extend()
-        score.score_print()
-        
+        score.score_print()      
         
 # detect collistion with wall
     if snake.head.xcor() > LIM or snake.head.xcor() < -LIM or\
         snake.head.ycor() > LIM or snake.head.ycor() < -LIM:
-        score.game_over()
-        game_is_on = False
-
+        score.reset()
+        snake.reset()
 # detect collision with tail
 # if head collides with any segment in the tail:
 # trigger game_over
     for segment in snake.segments[1:-1]:        
         if snake.head.distance(segment) < 10:
-            game_is_on = False
-            score.game_over()
+            score.reset()
+            snake.reset()
 
 screen.exitonclick()
