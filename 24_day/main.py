@@ -4,12 +4,6 @@ from snake import Snake
 from food import Food
 from score import Score
 
-file = open('my_score.txt')
-
-content = file.read()
-
-print(content)
-
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor('black')
@@ -39,7 +33,7 @@ while game_is_on:
         snake.extend()
         score.score_print()      
         
-# detect collistion with wall
+# detect collision with wall
     if snake.head.xcor() > LIM or snake.head.xcor() < -LIM or\
         snake.head.ycor() > LIM or snake.head.ycor() < -LIM:
         score.reset()
