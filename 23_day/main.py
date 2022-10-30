@@ -15,16 +15,16 @@ turtle = Player()
 car_manager = CarManager()
 scoremanager = Scoreboard()
 
-screen.onkeypress(turtle.move_up, 'Up')
+screen.onkey(turtle.move_up, 'Up')
 
 game_is_on = True
 while game_is_on:
-    if turtle.ycor() >= 240:
+    if turtle.ycor() >= 240: # successfull crossing
         time_delay *= 0.9
         scoremanager.score += 1
         scoremanager.scoreboard()
         turtle.goto(0,-280)        
-    for car in car_manager.cars:
+    for car in car_manager.cars: # crash with car detection
         if turtle.distance(car) < 20:            
             scoremanager.crash()
             turtle.color('black')            
