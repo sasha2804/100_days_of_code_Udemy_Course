@@ -9,59 +9,26 @@
 PLACEHOLDER = '[name]'
 
 # read names and clean data
-with open('24_day/challenge_mail_merge/input/letters/starting_letter.txt') as names_file:
+with open('24_day/challenge_mail_merge/input/names/invited_names.txt') as names_file:
     names = names_file.readlines()
 print(names)
 
-with open('24_day/challenge_mail_merge/input/names/invited_names.txt') as letter_file:
+with open('24_day/challenge_mail_merge/input/letters/starting_letter.txt') as letter_file:
     letter_content = letter_file.read()
     for name in names:
+        name = name.strip()
         new_letter = letter_content.replace(PLACEHOLDER, name)
-
-print(new_letter)
-
-
-# names = open(names_path, 'r')
-# names_in = names.readlines()
-# for name in names_in:
-#     name_temp.append(name.strip())
-# names_in = name_temp.copy()
-# name_temp.clear()
-
-# letter_path = '24_day/challenge_mail_merge/input/letters/starting_letter.txt' # path to read input
-# names_path = '24_day/challenge_mail_merge/input/names/invited_names.txt' # path to read input
-
-# letter_temp = [] # temporary list
-# name_temp = [] # temporary list
-
-# # read letters and clean data
-# letter = open(letter_path,'r')
-# letter_in = letter.readlines()
-# for str in letter_in:
-#     if str.strip() != '':
-#         letter_temp.append(str.strip())
-# letter_in = letter_temp.copy()
-# letter_temp.clear()    
-
-# # read names and clean data
-# names = open(names_path, 'r')
-# names_in = names.readlines()
-# for name in names_in:
-#     name_temp.append(name.strip())
-# names_in = name_temp.copy()
-# name_temp.clear()
-
-# # replace name and write letter as separate files
-# for name in names_in:
-#     letter_out = letter_in.copy() 
-#     letter_out[0] = letter_in[0].replace('[name]', name)
-#     letter_out_path = f'24_day/challenge_mail_merge/output/ready_to_send/Letter_for_{name.strip()}.txt'
-#     with open(letter_out_path, 'w') as data:
-#             for i in letter_out:
-#                 data.write(i+'\n\n')
+        print(new_letter)
+        letter_out_path = f'24_day/challenge_mail_merge/output/ready_to_send/Letter_for_{name}.txt'
+        with open(letter_out_path, 'w') as letter_out:
+            letter_out.write(new_letter)
     
 
-    
+       
+
+
+
+
  
     
 
