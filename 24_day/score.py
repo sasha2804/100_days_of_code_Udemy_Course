@@ -3,8 +3,8 @@ from turtle import Turtle
 
 ALIGN = 'center'
 FONT = ('Arial',12,'normal')
-SCORE_FILE = 'E:/Python/git_Udemy_100_days_of_code/100_days_of_code_Udemy_Course/100_days_of_code_Udemy_Course/24_day/my_score.txt' 
-
+#SCORE_FILE = 'E:/Python/git_Udemy_100_days_of_code/100_days_of_code_Udemy_Course/100_days_of_code_Udemy_Course/24_day/my_score.txt' 
+SCORE_FILE = './24_day/my_score.txt' 
 
 
 class Score(Turtle):
