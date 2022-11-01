@@ -8,66 +8,44 @@
         #Hint3: THis method will help you: https://www.w3schools.com/python/ref_string_strip.asp
 
 
-#letter_path = 'E:/Python/git_Udemy_100_days_of_code/100_days_of_code_Udemy_Course/100_days_of_code_Udemy_Course/24_day/challenge_mail_merge/input/letters/starting_letter.txt'
-from heapq import nsmallest
-from unicodedata import name
-
-
 letter_path = '24_day/challenge_mail_merge/input/letters/starting_letter.txt' # path to read input
 names_path = '24_day/challenge_mail_merge/input/names/invited_names.txt' # path to read input
 
+letter_temp = [] # temporary list
+name_temp = [] # temporary list
 
-# read letters
+# read letters and clean data
 letter = open(letter_path,'r')
 letter_in = letter.readlines()
-print(letter_in)
+for str in letter_in:
+    if str.strip() != '':
+        letter_temp.append(str.strip())
+letter_in = letter_temp.copy()
+letter_temp.clear()    
 
-# read names
+# read names and clean data
 names = open(names_path, 'r')
 names_in = names.readlines()
-print(names_in)
+for name in names_in:
+    name_temp.append(name.strip())
+names_in = name_temp.copy()
+name_temp.clear()
 
-#replace names in letters
-txt = letter_in[0]
-txt_adapt = txt.replace('[name]', 'new_name')
-# strip names
-
-
-
-for name in names_in:    
-    letter_in[0] = txt.replace('[name]', name)
-    print(letter_in)
-    letter_out_path = f'24_day/challenge_mail_merge/output/ready_to_send/Letter_for_{name}.txt'
+# replace name and write letter as separate files
+for name in names_in:
+    letter_out = letter_in.copy() 
+    letter_out[0] = letter_in[0].replace('[name]', name)
+    letter_out_path = f'24_day/challenge_mail_merge/output/ready_to_send/Letter_for_{name.strip()}.txt'
     with open(letter_out_path, 'w') as data:
-        data.write(str(letter_in)) # path to write output
+            for i in letter_out:
+                data.write(i+'\n\n')
+    
 
+    
+ 
+    
 
-
-
-# letter_name = 'Cook'
-# letter_out_path = f'24_day/challenge_mail_merge/output/ready_to_send/Letter_for_{letter_name}.txt'
-
-
-# with open(letter_out_path, 'w') as data:
-#     data.write(str(letter_in).strip()) # path to write output
-
-
-# for i in names_in:
-#     print(i)
-
-
-
-# write lettes as separate files
-
-# letter_in[0] = txt_adapt
-# print(letter_in)
-
-# letter_name = 'Cook'
-# letter_out_path = f'24_day/challenge_mail_merge/output/ready_to_send/Letter_for_{letter_name}.txt'
-
-
-# with open(letter_out_path, 'w') as data:
-#     data.write(str(letter_in).strip()) # path to write output
+ 
 
 
 

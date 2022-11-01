@@ -1,1 +1,0 @@
-['Dear new_name,\n', '\n', 'You are invited to my birthday this Saturday.\n', '\n', 'Hope you can make it!\n', '\n', 'Angela\n']
