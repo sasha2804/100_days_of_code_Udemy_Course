@@ -1,6 +1,5 @@
 import pandas as pd
 
-with open('25_day/weather_data.csv') as data:
-    data = data.readlines()
+data = pd.read_csv('25_day/weather_data.csv')
+print(data['temp'])
 
-print(data)
