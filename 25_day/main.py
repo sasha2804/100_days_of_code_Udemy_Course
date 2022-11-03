@@ -1,10 +1,10 @@
 import pandas as pd
 
-data = pd.read_csv('25_day/2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv')
-df = data.groupby(['Primary Fur Color'])['Primary Fur Color'].count().to_dict()
-result_df = pd.DataFrame({'Color': list(df.keys()), 'Count': list(df.values())})
-print(result_df)
-result_df.to_csv('25_day/squirrel_colors.csv')
+# data = pd.read_csv('25_day/2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv')
+# df = data.groupby(['Primary Fur Color'])['Primary Fur Color'].count().to_dict()
+# result_df = pd.DataFrame({'Color': list(df.keys()), 'Count': list(df.values())})
+# print(result_df)
+# result_df.to_csv('25_day/squirrel_colors.csv')
 
 
 
@@ -38,4 +38,10 @@ result_df.to_csv('25_day/squirrel_colors.csv')
 # df = pd.DataFrame(df_dict)
 # print(df)
 # # df.to_csv('stundents.csv')
+
+thisset = {"apple", "banana", "cherry"}
+
+print(thisset)
+
+print(len(thisset))
 
