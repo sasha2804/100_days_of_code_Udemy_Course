@@ -16,12 +16,10 @@ student_dict = {
     'students': ['Alex', 'Angela', 'Caroline', 'Tom'],
     'score': [12,15,20,50]
 }
-
 df = pd.DataFrame(student_dict)
-
 for (index,row) in df.iterrows():
-    # print(row.students, row.score)
-    if row.students == 'Alex':
-        print(row.score)
-        
+    print(row.students, row.score)
+    # if row.students == 'Alex':
+    #     print(row.score)
+
 
