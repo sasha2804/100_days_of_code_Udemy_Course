@@ -31,7 +31,7 @@ print(nato_dict)
 
 #TODO 2. Create a list of the phonetic code words from a word that the user inputs.
 user_input = input('Enter word: ').upper()
-phon_code = [nato_dict[i] for i in user_input]
+phon_code = [nato_dict[id] for id in user_input]
 print('Get your phonetic words list: ',phon_code)
 
 
