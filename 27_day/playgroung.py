@@ -1,5 +1,6 @@
 
 from ast import arg
+from gc import callbacks
 
 
 # def test_func(*args):
@@ -12,11 +13,26 @@ from ast import arg
 # test_func(1,2,3,44,5)
 
 
-def calc (**kwargs):
-    print(kwargs)
+# def calc (n, **kwargs):
+#     print(kwargs)
+#     # for key, value in kwargs.items():
+#     #     print(key)
+#     #     print(value)
+#     # print(kwargs['add'])
+
+#     n += kwargs['add']
+#     n *= kwargs['multiply']
+#     print(n)
 
 
+# calc(2, add=3, multiply=5)
 
 
+class Car():
+    def __init__(self, **kw):
+        self.make = kw.get('make')
+        self.model = kw.get('model')
 
-calc(add=5, multiply=8)
+my_car = Car(make='Nissan', model='GT-R')
+print(my_car.model)
+
