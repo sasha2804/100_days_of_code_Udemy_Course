@@ -39,9 +39,10 @@ import pandas as pd
 # print(df)
 # # df.to_csv('stundents.csv')
 
-thisset = {"apple", "banana", "cherry"}
+# thisset = {"apple", "banana", "cherry"}
 
-print(thisset)
+# print(thisset)
 
-print(len(thisset))
+# print(len(thisset))
+
 
