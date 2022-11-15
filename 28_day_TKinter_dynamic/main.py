@@ -18,18 +18,32 @@ reps = 0
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
-    global reps    
-    if reps < 5:
-        reps += 1    
-        if reps <= 4:
-            x = 1
-        else:
-            x = 2
-        count_down(x*60)
+    global reps
+    reps += 1
+    work_reps = (1,3,5,7)
+    pause_reps = (2,4,6)
+    if reps%8 == 0:
+        print('15 min reps',reps)       
+        count_down(90)
+        label_top.config(text='Break', fg=RED)
+    elif reps in work_reps:
+        print('20 min reps',reps)       
+        count_down(60)
+        label_top.config(text='Work', fg=GREEN)            
+    elif reps in pause_reps:
+        print('5 min reps',reps)         
+        count_down(30)
+        label_top.config(text='Break', fg=PINK)
+      
+        
+           
+
+   
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
 def count_down(count):
+    global reps 
     minutes = count//60
     if minutes < 10:
         minutes = '0'+str(minutes)    
@@ -40,11 +54,13 @@ def count_down(count):
     canvas.itemconfig(timer_text, text=timer_out)   
     if count > 0:    
         window.after(100, count_down, count - 1)
-        print(count)
     else:
-        check_mark = label_bottom.cget('text') + '✔'              
-        label_bottom.config(text= check_mark)
-        start_timer()
+        start_timer()        
+        if reps%2 == 0:
+            print('mark and reps: ', reps)       
+            check_mark = label_bottom.cget('text') + '✔'              
+            label_bottom.config(text= check_mark)
+            
         
        
 

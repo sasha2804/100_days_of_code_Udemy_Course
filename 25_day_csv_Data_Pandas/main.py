@@ -45,4 +45,4 @@ import pandas as pd
 
 # print(len(thisset))
 
-
+print(0%8)
