@@ -1,22 +1,29 @@
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 from random import randint
+import tkinter
+from tkinter import*
+from tkinter import messagebox
+import pyperclip
 
 password_generated = ''
-# making string for password generator
+# preparing string for password generator
 string_for_gen = ''
 for i in range(33, 126):
     string_for_gen += chr(i)
 print(string_for_gen)
 
-# making password generator fuction
+# password generator fuction realisation
 def password_generator():
     global password_generated
-    password_generated = ''    
-    if len(entry_website.get()) != 0: #check if website name was entered       
+    password_generated = ''
+    if len(entry_website.get()) == 0:
+        messagebox.showwarning(title='Warning', message='Do not leave field empty')    
+    else: 
+                       
         for i in range(1,12):
             index_rand = randint(0, len(string_for_gen)-1)
             password_generated += string_for_gen[index_rand]    
-        print(password_generated)
+        pyperclip.copy(password_generated)
         lb_gen_password.config(text=password_generated)
 
 
@@ -25,22 +32,32 @@ def password_generator():
 save_dict = {'website':{'email': '', 'password': ''}}
 data_saved = {}
 def save_result():
-    if len(password_generated) != 0 and len(entry_website.get()) != 0:
-        #building data structure to write into the file
+    if len(password_generated) == 0:
+        messagebox.showwarning(title='Warning', message='Do not leave field empty')
+    
+    #building data structure to write into the file
+    else:    
         data_saved[entry_website.get()] = {'email': entry_email.get(), 'password': password_generated}    
         site = entry_website.get()
         login = data_saved[entry_website.get()]['email']
         password = data_saved[entry_website.get()]['password']    
-        write_str = f'\n{site}|{login}|{password}'
-        with open('29_day_Password_manager/passwords_list.txt', 'a+') as data_file:
-            data_file.write(write_str)        
-        # cleaning from the screen entry and generated after saving
-        entry_website.delete(0, END)
-        lb_gen_password.config(text='')
+        write_str = f'\n{site}|{login}|{password}'    
+          
+        # pop up window to confirm saving 
+        confirmation = messagebox.askokcancel(title='Confirmation', message=f"Here are the details you entere: \nEmail: {entry_email.get()}"
+            f"\nPassword: {password_generated}\nIs it ok to save?")
+        
+        # save data
+        if confirmation:        
+            with open('29_day_Password_manager/passwords_list.txt', 'a+') as data_file:
+                data_file.write(write_str)        
+            # cleaning from the screen entry and generated after saving
+            entry_website.delete(0, END)
+            lb_gen_password.config(text='')
 
 
 # ---------------------------- UI SETUP ------------------------------- #
-from tkinter import*
+
 
 window = Tk()
 window.title('Password manager by Korotushko')
