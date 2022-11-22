@@ -24,7 +24,7 @@
 # {"A": "Alfa", "B": "Bravo"}
 
 import pandas as pd
-data = pd.read_csv('26_day/nato_abc/nato_phonetic_alphabet.csv')
+data = pd.read_csv('26_day_NATO_Aphabet/nato_abc/nato_phonetic_alphabet.csv')
 # print(data)
 nato_dict = {row.letter:row.code for (index, row) in data.iterrows()}
 # print(type(nato_dict))
