@@ -50,35 +50,26 @@ def save_result():
             f"\nPassword: {password_generated}\nIs it ok to save?")       
         # save data
         if confirmation:
-
             try:
                 with open('30_day_Exceptions_JSON_Password_manager/Password_Manager/passwords_list.json', 'r') as data_file:
                     data = json.load(data_file)
                     print(data)
+                    print('load json')
             except FileNotFoundError:
                 with open('30_day_Exceptions_JSON_Password_manager/Password_Manager/passwords_list.json', 'w') as data_file:
                     json.dump(data_saved, data_file, indent=4)
+                    print('dump')
             else:
                 with open('30_day_Exceptions_JSON_Password_manager/Password_Manager/passwords_list.json', 'r') as data_file:
                     data = json.load(data_file)
+                    print('data: ', data)
                     data.update(data_saved)
-                    json.dump(data_saved, data_file, indent=4)
-                # data = json.load(data_file)
-                # data.update(data_saved)
-                # print('update')
-
-            
+                with open('30_day_Exceptions_JSON_Password_manager/Password_Manager/passwords_list.json', 'w') as data_file:
+                    json.dump(data, data_file, indent=4)
+                    print('update')            
             finally:
                 entry_website.delete(0, END)
-                lb_gen_password.config(text='')
-                
-
-
-            # with open('30_day_Exceptions_JSON_Password_manager/Password_Manager/passwords_list.json', 'w') as data_file:
-            #     json.dump(data_saved, data_file, indent=4)
-
-
-            
+                lb_gen_password.config(text='')              
 
 
 # ---------------------------- SEARCH WEBSITE DATA ------------------------------- #
