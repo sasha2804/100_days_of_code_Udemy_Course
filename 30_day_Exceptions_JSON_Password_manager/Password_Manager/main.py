@@ -4,6 +4,8 @@ from random import randint
 import tkinter
 from tkinter import*
 from tkinter import messagebox
+from turtle import title
+from typing import final
 import pyperclip
 import json
 
@@ -28,11 +30,9 @@ def password_generator():
         pyperclip.copy(password_generated)
         lb_gen_password.config(text=password_generated)
 
-
-
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save_result():
-    website = entry_website.get()
+    website = entry_website.get().capitalize()
     email = entry_email.get()
     if len(password_generated) == 0:
         messagebox.showwarning(title='Warning', message='Do not leave field empty')    
@@ -44,7 +44,6 @@ def save_result():
                 'password' : password_generated
             }
         }
-
         # pop up window to confirm saving 
         confirmation = messagebox.askokcancel(title='Confirmation', message=f"Here are the details you entere: \nEmail: {entry_email.get()}"
             f"\nPassword: {password_generated}\nIs it ok to save?")       
@@ -73,12 +72,23 @@ def save_result():
 
 
 # ---------------------------- SEARCH WEBSITE DATA ------------------------------- #
-
-
-
-
-
-
+def search_password():
+    website = entry_website.get().capitalize()
+    if len(website) == 0:
+        messagebox.showwarning(title = 'Warning', message = 'Search field cannot be empty!\nEnter name of the website you search')
+    else:
+        try:
+            with open('30_day_Exceptions_JSON_Password_manager/Password_Manager/passwords_list.json', 'r') as data_file:
+                data = json.load(data_file)
+                message = f'Email: {data[website]["email"]} \nPassword: {data[website]["password"]}'
+        # except FileNotFoundError:
+        #     messagebox.showwarning(title = 'Warning', message = 'List of website does not exist')                      
+        except KeyError:
+            messagebox.showwarning(title = 'Warning', message='Entered site not found\nCheck name and try again')    
+        else:            
+            messagebox.showinfo(title = 'Website data', message = message)
+        finally:
+            entry_website.delete(0, END)
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
@@ -119,7 +129,7 @@ button_gen_password.grid(column=3, row=4, padx=5, pady=5, sticky=W)
 button_add = Button(text='Add', width=45, command=save_result)
 button_add.grid(column=2, columnspan=2, row=5,sticky=W)
 
-button_search = Button(text='Search', width=15) 
+button_search = Button(text='Search', width=15, command=search_password) 
 button_search.grid(column=3, row=2, padx=5, pady=5, sticky=W) 
 
 window.mainloop()

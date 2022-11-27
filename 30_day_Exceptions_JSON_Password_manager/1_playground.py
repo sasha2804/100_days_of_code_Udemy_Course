@@ -60,7 +60,20 @@
 
 # print(total_likes)
 
-x = 'AdddfdfrdRRTTt'
+# x = 'AdddfdfrdRRTTt'
 
-print(x.capitalize())
+# print(x.capitalize())
     
+x = 'brandaa'
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964,
+  "year": 2020
+}
+
+
+
+print(thisdict[x])
+
