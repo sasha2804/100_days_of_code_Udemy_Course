@@ -24,9 +24,7 @@ import datetime as dt
 import pandas as pd
 import random as rd
 
-# now =  dt.datetime.now()
-# day = now.weekday()
-# print(now.year, now.month, now.day, day)
+
 
 
 with open('32_day_Emails_sending/quotes.txt') as quotes:
@@ -38,7 +36,10 @@ print(list[0])
 print('random: ',rd.choice(list))
 
 
-
+now =  dt.datetime.now()
+day = now.weekday()
+day_name = 
+print(now.year, now.month, now.day, day)
 
 
 
