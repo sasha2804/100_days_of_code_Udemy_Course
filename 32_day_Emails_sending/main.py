@@ -1,47 +1,30 @@
-# from multiprocessing import connection
-# import smtplib
-
-# my_email = "o.korotushko@gmail.com"
-# password = "ipzxnpatikiynqti"
-# message = 'Hello, here is test message last message'
-
-
-# # with smtplib.SMTP("smtp.gmail.com") as connection:
-# #     connection.starttls()
-# #     connection.login(user=my_email, password=password)
-# #     connection.sendmail(from_addr=my_email, to_addrs="o.korotushko@yahoo.com", msg=f"Subject:Hello\n\n{message}")
-# #     # connection.close()
-
-
-# connection =  smtplib.SMTP("smtp.gmail.com")
-# connection.starttls()
-# connection.login(user=my_email, password=password)
-# connection.sendmail(from_addr=my_email, to_addrs="o.korotushko@yahoo.com", msg=f"Subject:Hello\n\n{message}")
-# connection.close()
-
-
+# from calendar import calendar
 import datetime as dt
-import pandas as pd
 import random as rd
+import smtplib
+
+my_email = "o.korotushko@gmail.com"
+password = "ipzxnpatikiynqti"
+message = 'Hello, here is test message last message'
 
 
-
-
+# reading list of phrases to send
 with open('32_day_Emails_sending/quotes.txt') as quotes:
-    list = quotes.readlines()
-
-
-print(list[0])
-
-print('random: ',rd.choice(list))
-
+    phrases_set = quotes.readlines()
 
 now =  dt.datetime.now()
 day = now.weekday()
-day_name = 
-print(now.year, now.month, now.day, day)
 
+print(type(day))
 
+if day == 4:
+    message = rd.choice(phrases_set)
+    print('message: ',message)
+    connection =  smtplib.SMTP("smtp.gmail.com")
+    connection.starttls()
+    connection.login(user=my_email, password=password)
+    connection.sendmail(from_addr=my_email, to_addrs="o.korotushko@yahoo.com", msg=f"Subject:Motivation\n\n{message}")
+    connection.close()
 
 
 
