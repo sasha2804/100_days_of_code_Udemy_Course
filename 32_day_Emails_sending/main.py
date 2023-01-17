@@ -27,6 +27,15 @@ if day == 4:
     connection.close()
 
 
+str1 = '2[]132123kom'
+str2 = ''
+
+for i in str1:
+    if i.isalpha():
+        str2 += i
+
+
+print(str2)
 
 
 
