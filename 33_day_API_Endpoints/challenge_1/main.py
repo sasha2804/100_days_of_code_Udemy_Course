@@ -1,19 +1,11 @@
 from tkinter import *
 import requests
 
-
 insert_text = "Kanye Quote Goes HERE"
 
-
 def get_quote():
-    global insert_text
-    response = requests.get(url='https://api.kanye.rest/').json()['quote']
-    insert_text = response
-    print(insert_text)
-    return insert_text
-    
-    
-
+    response = requests.get(url='https://api.kanye.rest/').json()['quote']    
+    canvas.itemconfig(quote_text, text=response)       
 
 
 window = Tk()
@@ -30,6 +22,5 @@ kanye_img = PhotoImage(file="33_day_API_Endpoints/challenge_1/kanye.png")
 kanye_button = Button(image=kanye_img, highlightthickness=0, command=get_quote)
 kanye_button.grid(row=1, column=0)
 
-print(get_quote())
 
 window.mainloop()
