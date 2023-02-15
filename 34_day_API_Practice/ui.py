@@ -1,4 +1,6 @@
+from cgitb import text
 from tkinter import*
+from quiz_brain import QuizBrain
 
 THEME_COLOR = "#375362"
 FONT_NAME = "Courier"
@@ -6,7 +8,8 @@ FONT_NAME = "Courier"
 TEXT_VAR = '0'
 
 class QuizInterface:
-    def __init__(self):
+    def __init__(self, quiz_brain: QuizBrain):
+        self.quiz_brain = quiz_brain
         self.window = Tk()
         self.window.title('Quizzler')   
         self.window.config(bg=THEME_COLOR, padx=20, pady=20)
@@ -25,16 +28,28 @@ class QuizInterface:
 
         #BUTTONS
         self.true_img = PhotoImage(file='34_day_API_Practice/images/true.png')    
-        self.button_start = Button(image=self.true_img, font=FONT_NAME, highlightthickness=0, pady = 0, padx= 0)
+        self.button_start = Button(image=self.true_img, font=FONT_NAME, highlightthickness=0, pady = 0, padx= 0, command=self.check_answer)
         # self.button_start.grid(column=0, row=3, pady = 20, padx= 20)
         self.button_start.grid(column=0, row=3, pady=20)
 
         self.false_img = PhotoImage(file='34_day_API_Practice/images/false.png')    
-        self.button_false = Button(image=self.false_img, font=FONT_NAME, highlightthickness=0, pady = 0, padx= 0)
+        self.button_false = Button(image=self.false_img, font=FONT_NAME, highlightthickness=0, pady = 0, padx= 0, command=self.check_answer('True'))
         # self.button_false.grid(column=1, row=3, pady = 20, padx = 20)
         self.button_false.grid(column=1, row=3, pady=20)
 
+        self.get_next_question()
+
         self.window.mainloop()
+
+
+    def get_next_question(self): 
+        q_text = self.quiz_brain.next_question()
+        self.canvas.itemconfig(self.question_text, text=q_text)
+
+    
+    def check_answer(self, user_answer):
+        self.quiz_brain.check_answer('True')
+        
 
 
     
