@@ -26,8 +26,8 @@ class QuizInterface:
 
         #BUTTONS
         self.true_img = PhotoImage(file='34_day_API_Practice/images/true.png')    
-        self.button_start = Button(image=self.true_img, font=FONT_NAME, highlightthickness=0, pady = 0, padx= 0, command=self.check_true_answer)
-        self.button_start.grid(column=0, row=3, pady=20)
+        self.button_true = Button(image=self.true_img, font=FONT_NAME, highlightthickness=0, pady = 0, padx= 0, command=self.check_true_answer)
+        self.button_true.grid(column=0, row=3, pady=20)
 
         self.false_img = PhotoImage(file='34_day_API_Practice/images/false.png')    
         self.button_false = Button(image=self.false_img, font=FONT_NAME, highlightthickness=0, pady = 0, padx= 0, command=self.check_false_answer)
@@ -38,30 +38,32 @@ class QuizInterface:
         self.window.mainloop()
 
 
-    def get_next_question(self): 
-        q_text = self.quiz_brain.next_question()
-        self.canvas.itemconfig(self.question_text, text=q_text)
-
-    
-    def check_true_answer(self):
-        if self.quiz_brain.still_has_questions() == True:
-            self.quiz_brain.check_answer('True')
-            self.get_next_question()
-            self.label_score.config(text=f"Score:  {self.quiz_brain.score}")      
-        else:
-            self.canvas.itemconfig(self.question_text, text=f"You've completed the quiz!!!\nYour final score was:\n {self.quiz_brain.score} out of {len(self.quiz_brain.question_list)}")   
-
-    
-    def check_false_answer(self):
-        if self.quiz_brain.still_has_questions() == True:
-            self.quiz_brain.check_answer('False')
-            self.get_next_question()        
+    def get_next_question(self):
+        self.canvas.config(bg='white')
+        if self.quiz_brain.still_has_questions():             
+            q_text = self.quiz_brain.next_question()             
+            self.canvas.itemconfig(self.question_text, text=q_text)
             self.label_score.config(text=f"Score:  {self.quiz_brain.score}")
-        else:
-            self.canvas.itemconfig(self.question_text, text=f"You've completed the quiz!!!\nYour final score was:\n {self.quiz_brain.score} out of {len(self.quiz_brain.question_list)}")
+        else:            
+            self.canvas.itemconfig(self.question_text, text=f"You've completed the quiz!!!\nYour final score is:\n {self.quiz_brain.score} out of {len(self.quiz_brain.question_list)}")
+            self.button_true.config(state='disable')
+            self.button_false.config(state='disabled')
         
+             
+    def check_true_answer(self):  
+        self.give_feedback(self.quiz_brain.check_answer('True'))           
 
-            
+    def check_false_answer(self):      
+        self.give_feedback(self.quiz_brain.check_answer('False'))      
+    
+    def give_feedback(self, right):
+        if right:
+            self.canvas.configure(bg='green')    
+        else:
+            self.canvas.configure(bg='red')     
+        self.window.after(1000, self.get_next_question)
+   
+        
 
 
     
