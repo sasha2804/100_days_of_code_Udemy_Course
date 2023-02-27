@@ -1,4 +1,4 @@
-from click import ParamType
+
 import requests
 
 url_weather = "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}"
@@ -48,7 +48,30 @@ response = requests.get(url= f'https://api.openweathermap.org/data/2.5/onecall?l
 response.raise_for_status()
 current_weather = response.json()
 
-print(current_weather)
+
+
+# print(current_weather)
+# print('\n')
+# # cut = current_weather['hourly'][0]['weather'][0]['id']
+# cut = current_weather['hourly'][0]['weather']
+# print(type(cut))
+# print(cut)
+
+id_set = set()
+
+for hour in range(0,13):
+    weather_id = current_weather['hourly'][hour]['weather'][0]['id']
+    id_set.add(int(weather_id))      
+    
+def umbrella_check(id_set):
+    for i in id_set:
+        if i < 700:
+            return 'Get your umbrella'
+    return 'You do not need umbrella today'
+
+print(umbrella_check(id_set))
 
 
 
+    
+    
