@@ -105,6 +105,7 @@ class Solution:
         lst = []
         lst_final = []
         result = 0
+        
         dict = {
             'I': 1,
             'V': 5,
@@ -146,13 +147,20 @@ class Solution:
                 lst.pop(0)
                 lst.pop(0)
                 trig = 1
-        # print(type(sum(lst_final)))        
+        # print(type(sum(lst_final)))
+        # 
+        print(type(lst_final[0]))
+
+        print(lst_final)
+        print(sum(lst_final))        
         
         if len(lst_final) != 0:        
             for j in (lst_final):
-                result += j          
+                result += j
+                print(type(result))          
             return(result)
         return None
+
 
     
 
