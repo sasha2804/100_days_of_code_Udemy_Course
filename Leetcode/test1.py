@@ -39,6 +39,8 @@
 
 
 
-l1 = [2,4,3]
+l1 = (2,4,3)
 
-lst = list(l1.strip())
+
+if 2 in l1:
+    print('okokok')
