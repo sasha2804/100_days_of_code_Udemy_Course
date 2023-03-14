@@ -13,21 +13,14 @@ class Solution:
         print(list1)
 
         # while list1.next != None:
-        #     print(list.val)
+        #     print('test')       
 
-
-
-
-
-
-        # for i in range(0, len(list1)):
-
-        #     first = list1[i]
-        #     second = list2[i]
+        # # for i in range(0, len(list1)):
+        #     first = list1[i].val
+        #     second = list2[i].val          
 
         #     if first > second:
         #         first, second = second, first
-
 
         #     ret_lst.append(first)
         #     ret_lst.append(second)
@@ -36,18 +29,6 @@ class Solution:
 
 
 
-# list1 = [1,2,4]
-# list2 = [1,3,4]
-
-# list1 = []
-# list2 = []
-
-# list1 = []
-# list2 = [0]
-node3 = ListNode(3,None)
-node2 = ListNode(2,node3)
-node1 = ListNode(1,node2)
-
 
 node6 = ListNode(3,None)
 node5 = ListNode(2,node6)
@@ -55,11 +36,18 @@ node4= ListNode(1,node5)
 
 
 
-list1 = [node1]
+
+node1 = ListNode(1)
+node2 = ListNode(2)
+node3 = ListNode(4)
+
+node1.next = node2
+node2.next = node3
+
+
+
+list1 = [node1, node2, node3]
 list2 = [node4, node5, node6]
-
-
-
 
 test = Solution()
 

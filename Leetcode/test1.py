@@ -1,46 +1,55 @@
-# strs = ["flollllweöllllllllr","flow","floght"]
+# Linked List Node
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+ 
+ 
+# Create & Handle List operations
+class LinkedList:
+    def __init__(self):
+        self.head = None
+ 
+    # Method to display the list
+    def printList(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=" ")
+            temp = temp.next
+ 
+    # Method to add element to list
+    def addToList(self, newData):
+        newNode = Node(newData)
+        if self.head is None:
+            self.head = newNode
+            return
+ 
+        last = self.head
+        # print('self.head: ',self.head)
+        print('last1: ', last)
+        while last.next:
+            last = last.next
+
+            print('last: ', last)
+       
+        last.next = newNode
+ 
+        # # last.next = newNode
+
+        # # last = self.head
+        # # print('self.head: ',self.head)
+        # # print('last: ', last)
+        # while self.head.next:
+        #     self.head = self.head.next
+ 
+        # self.head.next = newNode
 
 
-# length = len(strs[0])
-
-# for i in strs:
-
-#     if len(i) < length:
-#         length = len(i)
-
-# print(length)
+lst = LinkedList()
 
 
+lst.addToList(1)
+lst.addToList(2)
+lst.addToList(3)
 
-
-# test = "flollllweöllllllllr"
-
-# print(test[:4])
-
-
-# num  = 907
-
-# num = str(num)
-
-# str1 = list(num.strip())
-
-# print(str1)
-
-
-# # l1 = [2,4,3]
-# l1 = ["2","4","3"]
-# # l1.reverse()
-# s = ''
-# for i in l1:
-#     print(i)
-#     s += i
-
-# print(s)
-
-
-
-l1 = (2,4,3)
-
-
-if 2 in l1:
-    print('okokok')
+lst.printList()
