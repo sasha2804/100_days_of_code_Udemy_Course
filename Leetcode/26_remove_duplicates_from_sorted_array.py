@@ -15,7 +15,7 @@ class Solution:
         
         nums = ret
         k = len(nums)
-        return  'nums=nums)
+        # return  'nums=nums)
 
 
 test = Solution()
