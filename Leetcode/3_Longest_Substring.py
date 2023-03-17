@@ -31,6 +31,8 @@ s="abctgabcd"
 s = "abba"
 # s = 'cdd'
 
+# s = "auda"
+
 if len(s) == 1:
     s = s*2
 
@@ -38,24 +40,29 @@ for i in s:
     count1 += 1          
     if i not in s_temp:
         s_temp += i
+        print('s_temp: ', s_temp)
+
         count += 1
-        print(i)
+        # print(i)
         if count1 == len(s):
             max_len = count
-    else:
-        l = len(s_temp)
-        s_temp = s_temp[s_temp.index(i)+1:]
-        print('s_temp: ', s_temp)
+            print('max len: ', max_len)
+    else:        
+        print('s_temp in!!!!: ', s_temp)
+        s_temp = s_temp[s_temp.index(i):]
+        print('s_temp in!!!!: ', s_temp)
+        # print('s_temp: ', s_temp)
         s_temp += i
-        print('s_temp: ', s_temp)
+        l = len(s_temp)
         
-        print('length: ',l)
+        
+        # print('length: ',l)
         # count -= 1
         
-        if max_len < l:
-            max_len = l
-            print('max len: ', max_len)
-            # count = 0
+        if max_len < count:
+            max_len = count
+            # print('max len: ', max_len)
+            count = 0
         
 
 print(max_len)
