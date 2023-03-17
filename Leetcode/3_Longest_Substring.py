@@ -51,6 +51,8 @@ for i in s:
         print('s_temp in!!!!: ', s_temp)
         s_temp = s_temp[s_temp.index(i):]
         print('s_temp in!!!!: ', s_temp)
+
+        
         # print('s_temp: ', s_temp)
         s_temp += i
         l = len(s_temp)
