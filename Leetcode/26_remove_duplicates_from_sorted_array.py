@@ -53,7 +53,7 @@
 s = 'afdsas'
 
 
-print(s[s.index('d'):])
+print(s[s.index('d')+1:])
 
 
 

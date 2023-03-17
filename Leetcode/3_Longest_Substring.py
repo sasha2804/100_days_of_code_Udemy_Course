@@ -16,7 +16,7 @@ s = "dvdfg"
 
 # s = '   '
 
-s="pwwkew"
+# s="pwwkew"
 
 # s="aaaaaaaaaaa"
 
@@ -24,6 +24,12 @@ max_len = 0
 count = 0
 s_temp = ""
 count1 = 0
+
+# s="pwwkew"
+s="abctgabcd"
+
+s = "abba"
+# s = 'cdd'
 
 if len(s) == 1:
     s = s*2
@@ -37,13 +43,20 @@ for i in s:
         if count1 == len(s):
             max_len = count
     else:
-        s_temp = s_temp[s_temp.index(i):]
+        l = len(s_temp)
+        s_temp = s_temp[s_temp.index(i)+1:]
         print('s_temp: ', s_temp)
-        # s_temp += i
+        s_temp += i
         print('s_temp: ', s_temp)
         
-        if count > max_len:
-            max_len = count
+        print('length: ',l)
+        # count -= 1
+        
+        if max_len < l:
+            max_len = l
+            print('max len: ', max_len)
+            # count = 0
+        
 
 print(max_len)
 
