@@ -75,8 +75,99 @@
 
 # page 205 proceed
 
-str1 = '2020-12-11 10:44:41.635'
+# str1 = '2020-12-11 10:44:41.635'
 
-str2 = str1[11:16]
+# str2 = str1[11:16]
 
-print(str2)
+# print(str2)
+
+
+
+# class Complex:
+#     def __init__(self, real, imag):
+#         self.real = real
+#         self.imag = imag
+
+#     def add(self, number):
+#         real = self.real + number.real
+#         imag = self.imag + number.imag
+#         result = Complex(real, imag)
+#         return result
+
+
+
+
+
+
+
+# n1 = Complex(5, 6)
+# n2 = Complex(-4, 2)
+
+# result =  n1.add(n2)
+
+# print(result)
+
+# # print(result.real)
+# # print(result.imag)
+
+
+# class Triangle:
+#     def __init__(self, a, b, c):
+#         self.a = a
+#         self.b = b
+#         self.c = c
+
+#     def perimeter(self):
+#         return self.a + self.b + self.c
+ 
+
+# triag = Triangle(5,5,5)
+
+# print(triag.perimeter())
+
+
+
+
+class Polygon:
+    def __init__(self, sides):
+        self.sides = sides
+
+    
+    def display_info(self):
+        print('A polygon is two dimensional shape with straight lines')
+
+
+    def get_perim(self):
+        perim = sum(self.sides)
+        return perim
+    
+class Triangle(Polygon):
+    def display_info(self):
+        print('A triangle is a polygon with 3 edges')
+
+        super().display_info()
+
+
+
+class Quad(Polygon):
+    def display_info(self):
+        print('Quad is a polygon with 4 edges')
+
+
+t1 = Triangle([5,6,7])
+
+perimeter = t1.get_perim()
+
+print(perimeter)
+
+
+t1.display_info()
+        
+    
+
+
+
+
+
+
+
