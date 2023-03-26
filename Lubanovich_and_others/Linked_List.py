@@ -12,36 +12,29 @@ class LinkedList:
     
     def AddAtBegin(self, data):
         newNode = Node(data)
-        if self.head == None:
-            self.head = newNode.val
-            print(self.head)
-        
         newNode.next = self.head
-        self.nead = newNode
-
-
-
         
 
     
     def PrintLinkedList(self):
         temp = self.head
+        print('ok!!!!!!!!!!!!!!!!!!!')
 
-        while temp:
+        while temp.next:
             print(temp.val)
             temp = temp.next
+            print('ok1231321')
         
 
 
+
+       
 testLL = LinkedList()
 
-
 testLL.AddAtBegin(1)
-
+testLL.AddAtBegin(2)
+testLL.AddAtBegin(3)
 testLL.PrintLinkedList()
-
-
-
 
 
 

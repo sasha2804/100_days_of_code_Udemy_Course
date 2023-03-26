@@ -42,10 +42,10 @@ class LinkedList:
 # Function to merge the lists
 # Takes two lists which are sorted
 # joins them to get a single sorted list
-def mergeLists(headA, headB):
-    print('OK')
+# def mergeLists(headA, headB):
+#     print('OK')
 
-    print('print headA: ',headA)
+#     print('print headA: ',headA)
 
 '''
     # A dummy node to store the result
