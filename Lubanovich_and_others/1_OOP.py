@@ -128,46 +128,83 @@
 
 
 
-class Polygon:
-    def __init__(self, sides):
-        self.sides = sides
+# class Polygon:
+#     def __init__(self, sides):
+#         self.sides = sides
 
     
-    def display_info(self):
-        print('A polygon is two dimensional shape with straight lines')
+#     def display_info(self):
+#         print('A polygon is two dimensional shape with straight lines')
 
 
-    def get_perim(self):
-        perim = sum(self.sides)
-        return perim
+#     def get_perim(self):
+#         perim = sum(self.sides)
+#         return perim
     
-class Triangle(Polygon):
-    def display_info(self):
-        print('A triangle is a polygon with 3 edges')
+# class Triangle(Polygon):
+#     def display_info(self):
+#         print('A triangle is a polygon with 3 edges')
 
-        super().display_info()
-
-
-
-class Quad(Polygon):
-    def display_info(self):
-        print('Quad is a polygon with 4 edges')
+#         super().display_info()
 
 
-t1 = Triangle([5,6,7])
 
-perimeter = t1.get_perim()
+# class Quad(Polygon):
+#     def display_info(self):
+#         print('Quad is a polygon with 4 edges')
 
-print(perimeter)
+
+# t1 = Triangle([5,6,7])
+
+# perimeter = t1.get_perim()
+
+# print(perimeter)
 
 
-t1.display_info()
+# t1.display_info()
         
     
 
+# class Overload:
+#     def __init__(self, n1=0, n2=0):
+#         self.n1 = n1
+#         self.n2 = n2
+    
+#     def __add__(self, other):
+#         n1 = self.n1 + other.n1
+#         n2 = self.n2 + other.n2
+#         return (n1, n2)
+
+# test = Overload(1,2)
+# test1 = Overload(2,3)
+
+# print(test + test1)
 
 
+# class Overload:
+#     def __init__(self, n1=0):
+#         self.n1 = n1
+#     def __add__(self, other):
+#         n1 = self.n1 + other.n1
+#         return (n1)
 
+# test = Overload(3)
+# test1 = Overload(2)
+# print(test + test1)
+
+
+# class Overload:
+#     def __init__(self, n1=0):
+#         self.n1 = n1       
+    
+#     def __mul__(self, other):
+#         n1 = self.n1 * other.n1
+#         return n1
+
+# test = Overload(3)
+# test1 = Overload(2)
+
+# print(test * test1)
 
 
 
