@@ -1,17 +1,12 @@
 # lst = [0,1,2,2,2,3,0,4,2]
 # lst = [0,1,8,8,8,3,0,4,2,2]
 
+a = 190.41
 
-lst = [0,1,2,3,4]
 
-x = 0
+b = 192.22
 
-for i in range(0, len(lst) - x):
 
-    if i == 2:
-        lst.remove(lst[i])
-        x += 1
-        print('!!!!!')
+print(abs(a-b))
 
-    print(lst[i])
 

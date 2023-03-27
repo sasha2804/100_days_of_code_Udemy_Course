@@ -9,8 +9,8 @@ COMPANY_NAME = "Tesla Inc"
 STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
-PERIOD = "TIME_SERIES_WEEKLY"
-PERIOD = "TIME_SERIES_WEEKLY_ADJUSTED"
+PERIOD = "TIME_SERIES_DAILY_ADJUSTED"
+# PERIOD = "TIME_SERIES_WEEKLY_ADJUSTED"
 
 demo = 'JDGNAXTOR66ZS312'
 
@@ -22,18 +22,27 @@ url = f'https://www.alphavantage.co/query?function={PERIOD}&symbol={STOCK_NAME}&
 response = requests.get(url)
 response.raise_for_status()
 data = response.json()
-print(data)
+# print(data)
 
 
-print()
-print(data['Meta Data']['3. Last Refreshed'])
+# print()
+# print(data['Meta Data'])
+# print(type(data))
 
+
+# date second
+print(data["Time Series (Daily)"]["2023-03-24"]["4. close"])
+close_yester = float(data["Time Series (Daily)"]["2023-03-24"]["4. close"])
 
 #TODO 2. - Get the day before yesterday's closing stock price
-
-
+print(data["Time Series (Daily)"]["2023-03-23"]["4. close"])
+close__bef_yester = float(data["Time Series (Daily)"]["2023-03-24"]["4. close"])
 
 #TODO 3. - Find the positive difference between 1 and 2. e.g. 40 - 20 = -20, but the positive difference is 20. Hint: https://www.w3schools.com/python/ref_func_abs.asp
+diff = (float(close_yester) - float(close__bef_yester))
+print((float(close_yester) - float(close__bef_yester)))
+
+
 
 #TODO 4. - Work out the percentage difference in price between closing price yesterday and closing price the day before yesterday.
 
