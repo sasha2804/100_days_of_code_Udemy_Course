@@ -1,6 +1,27 @@
 import requests
 
+import datetime
 
+r = datetime.datetime.now()
+
+date_only = r.strftime("%G,%m")
+
+year = r.strftime("%G")
+month = r.strftime("%m")
+day = str(int(r.strftime("%d")) - 1)
+if len(day) == 1:
+    day = "0"+day
+
+print(day)
+
+date = year+"-"+month+"-"+day
+
+print('date: ',date)
+
+
+# print('date only: ', date_only)
+
+# print('date:',r)
 
 
 STOCK_NAME = "TSLA"
@@ -11,6 +32,9 @@ NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
 PERIOD = "TIME_SERIES_DAILY_ADJUSTED"
 # PERIOD = "TIME_SERIES_WEEKLY_ADJUSTED"
+
+# https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=TSLA&interval=5min&apikey=JDGNAXTOR66ZS312
+
 
 demo = 'JDGNAXTOR66ZS312'
 
@@ -23,24 +47,25 @@ response = requests.get(url)
 response.raise_for_status()
 data = response.json()
 # print(data)
-
-
 # print()
 # print(data['Meta Data'])
 # print(type(data))
 
 
 # date second
-print(data["Time Series (Daily)"]["2023-03-24"]["4. close"])
-close_yester = float(data["Time Series (Daily)"]["2023-03-24"]["4. close"])
+# print(data["Time Series (Daily)"]["2023-03-24"]["4. close"])
+close_day_bef = float(data["Time Series (Daily)"]["2023-03-18"]["4. close"])
+print(close_day_bef)
+
 
 #TODO 2. - Get the day before yesterday's closing stock price
-print(data["Time Series (Daily)"]["2023-03-23"]["4. close"])
-close__bef_yester = float(data["Time Series (Daily)"]["2023-03-24"]["4. close"])
+# print(data["Time Series (Daily)"]["2023-03-23"]["4. close"])
+close_2days_bef = float(data["Time Series (Daily)"]["2023-03-23"]["4. close"])
+
 
 #TODO 3. - Find the positive difference between 1 and 2. e.g. 40 - 20 = -20, but the positive difference is 20. Hint: https://www.w3schools.com/python/ref_func_abs.asp
-diff = (float(close_yester) - float(close__bef_yester))
-print((float(close_yester) - float(close__bef_yester)))
+
+
 
 
 
