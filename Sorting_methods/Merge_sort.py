@@ -9,11 +9,13 @@ def mergeSort(arr):
 
       # print('left before: ', left_arr)
       # print('right before: ', right_arr)
-
-
       mergeSort(left_arr)
+      print('merge left passed')
+
 
       mergeSort(right_arr)
+      print('merge right passed')
+
 
 
       print('left after: ',left_arr)
@@ -22,7 +24,7 @@ def mergeSort(arr):
       j = 0
       k = 0
 
-      print((i,j,k))
+      # print((i,j,k))
 
       while i<len(left_arr) and j<len(right_arr):
         if left_arr[i] < right_arr[j]:
@@ -33,18 +35,20 @@ def mergeSort(arr):
            j += 1
         k += 1
 
-      print(arr)
+      print('arr1: ',arr)
 
       while i < len(left_arr):
          arr[k] = left_arr[i]
          i += 1
          k += 1
+      print('arr2: ',arr)
       while j < len(right_arr):
          arr[k] = right_arr[i]
          j += 1
          k += 1
+      print('arr3: ',arr)
 
-arr = [5,4,3,2,1]
+arr = [5,4,2,1]
 
 mergeSort(arr)
 
