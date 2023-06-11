@@ -48,7 +48,7 @@ def mergeSort(arr):
          k += 1
       print('arr3: ',arr)
 
-arr = [5,4,2,1]
+arr = [5,4,3,3,2,1]
 
 mergeSort(arr)
 
