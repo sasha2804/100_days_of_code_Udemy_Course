@@ -1,28 +1,27 @@
 import requests
 
+
+### CHECK LATER ###
+
 import datetime
 
 r = datetime.datetime.now()
-
 date_only = r.strftime("%G,%m")
-
 year = r.strftime("%G")
 month = r.strftime("%m")
 day = str(int(r.strftime("%d")) - 1)
 if len(day) == 1:
     day = "0"+day
-
 print(day)
 
 date = year+"-"+month+"-"+day
 
-print('date: ',date)
-
+print('curent date: ',date)
 
 # print('date only: ', date_only)
-
 # print('date:',r)
 
+### CHECK LATER ###
 
 STOCK_NAME = "TSLA"
 COMPANY_NAME = "Tesla Inc"
@@ -54,14 +53,14 @@ data = response.json()
 
 # date second
 # print(data["Time Series (Daily)"]["2023-03-24"]["4. close"])
-close_day_bef = float(data["Time Series (Daily)"]["2023-03-18"]["4. close"])
-print(close_day_bef)
+close_day_bef = float(data["Time Series (Daily)"]["2023-06-05"]["4. close"])
+print('close chosen date: ',close_day_bef)
 
 
 #TODO 2. - Get the day before yesterday's closing stock price
 # print(data["Time Series (Daily)"]["2023-03-23"]["4. close"])
-close_2days_bef = float(data["Time Series (Daily)"]["2023-03-23"]["4. close"])
-
+close_2days_bef = float(data["Time Series (Daily)"]["2023-06-06"]["4. close"])
+print('close date before: ',close_2days_bef)
 
 #TODO 3. - Find the positive difference between 1 and 2. e.g. 40 - 20 = -20, but the positive difference is 20. Hint: https://www.w3schools.com/python/ref_func_abs.asp
 
