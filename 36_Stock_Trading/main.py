@@ -46,10 +46,20 @@ print('close date before: ',close_2days_bef)
 
 
 #TODO 3. - Find the positive difference between 1 and 2. e.g. 40 - 20 = -20, but the positive difference is 20. Hint: https://www.w3schools.com/python/ref_func_abs.asp
+stock_diff = round(abs(close_day_bef-close_2days_bef))
+print('difference: ', stock_diff)
 
 #TODO 4. - Work out the percentage difference in price between closing price yesterday and closing price the day before yesterday.
+perc_diff = close_2days_bef/close_day_bef
+if perc_diff < 1:
+    perc_print = round((1 - perc_diff)*100)
+else: 
+    perc_print = round((perc_diff - 1)*100)
+
+print(f'difference percentage: {perc_print}%')
 
 #TODO 5. - If TODO4 percentage is greater than 5 then print("Get News").
+
 
     ## STEP 2: https://newsapi.org/ 
     # Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME. 
