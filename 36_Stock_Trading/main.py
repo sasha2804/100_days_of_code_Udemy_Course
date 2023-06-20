@@ -33,15 +33,20 @@ response = requests.get(url)
 response.raise_for_status()
 data = response.json()
 
-# Information for current date request
-close_day_bef = float(data["Time Series (Daily)"][str(last_date)]["4. close"])
-print('close chosen date: ',close_day_bef)
+try:
+    # Information for current date request
+    close_day_bef = float(data["Time Series (Daily)"][str(last_date)]["4. close"])
+    print('close chosen date: ',close_day_bef)
+except KeyError:
+    print('1!!!!Exception key Error')
 
-#TODO 2. - Get the day before yesterday's closing stock price
-# print(data["Time Series (Daily)"]["2023-03-23"]["4. close"])
-close_2days_bef = float(data["Time Series (Daily)"][str(prev_date)]["4. close"])
-print('close date before: ',close_2days_bef)
-
+try:
+    #TODO 2. - Get the day before yesterday's closing stock price
+    # print(data["Time Series (Daily)"]["2023-03-23"]["4. close"])
+    close_2days_bef = float(data["Time Series (Daily)"][str(prev_date)]["4. close"])
+    print('close date before: ',close_2days_bef)
+except KeyError:
+    print('2!!!!Exception key Error')
 
 
 
