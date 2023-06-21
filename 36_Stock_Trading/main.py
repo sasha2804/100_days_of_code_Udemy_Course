@@ -77,26 +77,27 @@ print(f'difference percentage: {perc_print}%')
 
 #TODO 6. - Instead of printing ("Get News"), use the News API to get articles related to the COMPANY_NAME.
 
-# STOCK_NAME = "TSLA"
-# PERIOD = "TIME_SERIES_DAILY_ADJUSTED"
-# KEY1 = '44268d9d294249ed9ed3044dbfd7e7c0'
-# url = f'https://newsapi.org/v2/everything?q=tesla&from=2023-05-19&sortBy=publishedAt&apiKey={KEY1}'
-# 'https://newsapi.org/v2/everything?q=tesla&from=2023-05-19&sortBy=publishedAt&apiKey=44268d9d294249ed9ed3044dbfd7e7c0'
-# response_news = requests.get(url)
-# response_news.raise_for_status()
-# data_news = response_news.json()
+STOCK_NAME = "TSLA"
+PERIOD = "TIME_SERIES_DAILY_ADJUSTED"
+KEY1 = '44268d9d294249ed9ed3044dbfd7e7c0'
+url = f'https://newsapi.org/v2/everything?q=tesla&from={current_date-dt.timedelta(days=7)}&sortBy=publishedAt&apiKey={KEY1}'
+'https://newsapi.org/v2/everything?q=tesla&from=2023-05-19&sortBy=publishedAt&apiKey=44268d9d294249ed9ed3044dbfd7e7c0'
+response_news = requests.get(url)
+response_news.raise_for_status()
+data_news = response_news.json()
+# print(data_news)
 
 #TODO 7. - Use Python slice operator to create a list that contains the first 3 articles. Hint: https://stackoverflow.com/questions/509211/understanding-slice-notation
     ## STEP 3: Use twilio.com/docs/sms/quickstart/python
     #to send a separate message with each article's title and description to your phone number. 
 
 #TODO 8. - Create a new list of the first 3 article's headline and description using list comprehension.
-# headlines = [data_news["articles"][x]['title'] for x in range(4)]
-# print(headlines)
+headlines = [data_news["articles"][x]['title'] for x in range(5)]
+print(headlines)
 
 #TODO 9. - Send each article as a separate message via Twilio. 
 
-'afasdfasf'
+
 
 #Optional TODO: Format the message like this: 
 """
