@@ -1,6 +1,6 @@
 import requests
 from datetime import datetime, timedelta
-
+import smtplib
 import datetime as dt
 
 # https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=TSLA&interval=5min&apikey=JDGNAXTOR66ZS312
@@ -85,7 +85,7 @@ url = f'https://newsapi.org/v2/everything?q=tesla&from={current_date-dt.timedelt
 response_news = requests.get(url)
 response_news.raise_for_status()
 data_news = response_news.json()
-# print(data_news)
+
 
 #TODO 7. - Use Python slice operator to create a list that contains the first 3 articles. Hint: https://stackoverflow.com/questions/509211/understanding-slice-notation
     ## STEP 3: Use twilio.com/docs/sms/quickstart/python
@@ -93,10 +93,25 @@ data_news = response_news.json()
 
 #TODO 8. - Create a new list of the first 3 article's headline and description using list comprehension.
 headlines = [data_news["articles"][x]['title'] for x in range(5)]
-print(headlines)
+# print('HEADLINES: ',headlines)
 
 #TODO 9. - Send each article as a separate message via Twilio. 
+description = [data_news["articles"][x]['description'] for x in range(5)]
+# print('DESCRIPTION: ',description)
+print(f'{headlines[0]} \n {description[0]}')
 
+my_email = "o.korotushko@gmail.com"
+password = "ipzxnpatikiynqti"
+message = 'Hello, here is test message last message'
+
+
+
+if len(headlines) != 0:   
+    connection =  smtplib.SMTP("smtp.gmail.com")
+    connection.starttls()
+    connection.login(user=my_email, password=password)
+    connection.sendmail(from_addr=my_email, to_addrs="o.korotushko@yahoo.com", msg=f"Subject:Motivation\n\n{message}")
+    connection.close()
 
 
 #Optional TODO: Format the message like this: 
