@@ -17,7 +17,11 @@ day = now.weekday()
 
 print(type(day))
 
-if day == 4:
+trig = 1
+
+
+# if day == 4:
+if trig:
     message = rd.choice(phrases_set)
     print('message: ',message)
     connection =  smtplib.SMTP("smtp.gmail.com")
