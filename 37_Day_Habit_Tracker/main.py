@@ -1,7 +1,9 @@
 
+from turtle import st
 from urllib import response
 from urllib.request import URLopener
 import requests
+import datetime as dt
 
 USERNAME = "oleksandr1987"
 TOKEN = "123456token!oleks"
@@ -45,15 +47,15 @@ headers = {
 
 
 
-write_params = {
-    "date":"20230725",
-    "quantity":"2"     
-}
+# write_params = {
+#     "date": "230705",
+#     "quantity":"2"     
+# }
 
-write_point =  f"https://pixe.la/v1/users/{USERNAME}/graphs/{GRAPH_ID}"
+# write_point =  f"https://pixe.la/v1/users/{USERNAME}/graphs/{GRAPH_ID}"
 
-write_resp = requests.post(url=write_point,json=write_params, headers=headers)
-print(write_resp.text)
+# write_resp = requests.post(url=write_point,json=write_params, headers=headers)
+# print(write_resp.text)
 
 
 
@@ -67,3 +69,10 @@ print(write_resp.text)
 '''
 https://pixe.la/v1/users/oleksandr1987/graphs/graph1
 '''
+
+
+today = dt.date.today()
+print(today)
+
+date_str = today.strftime("%Y%m%d")
+print(date_str)
