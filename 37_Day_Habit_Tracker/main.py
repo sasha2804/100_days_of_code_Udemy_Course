@@ -1,4 +1,4 @@
-import re
+
 from urllib import response
 import requests
 
@@ -14,29 +14,27 @@ user_params = {
     "notMinor": "yes"
 }
 
+
+# CREATE USER
 # response = requests.post(url=pixela_endpoint, json=user_params)
 # print(response.text)
 
 
 
+# CREATE GRAPH
+# graph_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs"
+# graph_config = {
+#     "id": "graph1",
+#     "name": "Reading graph",
+#     "unit": "Minutes",
+#     "type": "int",
+#     "color": "ajisai"
+# }
+# headers = {
+#     "X-USER-TOKEN": TOKEN
+# }
 
-graph_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs"
-
-
-graph_config = {
-    "id": "graph1",
-    "name": "Reading graph",
-    "unit": "Minutes",
-    "type": "int",
-    "color": "ajisai"
-}
-
-headers = {
-    "X-USER-TOKEN": TOKEN
-}
-
-response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
-
-print(response.text)
+# response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
+# print(response.text)
 
 
