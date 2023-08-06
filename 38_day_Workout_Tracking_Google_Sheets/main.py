@@ -5,6 +5,11 @@ GENDER = "male"
 WEIGHT_KG = "88"
 HEIGHT_CM = "180"
 AGE = "36"
+SHEETY_TOKEN = "myWorkout2023token"
+
+USER_NAME = "Oleksandr1987"
+PASSWORD = "Korotushko2073177041"
+AUTH_HEADER = "Authorization: Basic bnVsbDpudWxs"
 
 APP_ID = "8415494f"
 API_KEY = "bd5fca52e0075cd961ec485b7ab97e00"
