@@ -1,5 +1,6 @@
 import requests
 from datetime import datetime
+import os
 
 GENDER = "male"
 WEIGHT_KG = "88"
@@ -62,3 +63,22 @@ sheet_response = requests.post(sheet_endpoint, json=sheet_inputs, auth=(
 )
 
 
+
+'''
+TO BE ADDED AS 
+
+
+APP_ID
+
+API_KEY
+
+SHEET_ENDPOINT
+
+USERNAME
+
+PASSWORD
+
+TOKEN
+########
+
+'''
