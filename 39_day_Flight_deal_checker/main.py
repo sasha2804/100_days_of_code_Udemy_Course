@@ -4,25 +4,25 @@ from data_manager import DataManager
 from flight_search import FlightSearch
 
 
+# google sheet Class manupulations
 flight_data = DataManager()
-readData = flight_data.readData()
-print(readData)
+flight_data.readData()
+readData = flight_data.sheetydata
 
-flight_search = FlightSearch()
-get_destination = flight_search.get_destination_code('New York')
-print(get_destination)
-
+pprint(readData)
+# print(readData['prices'][0]['iataCode'])
 
 
 
 
+# check if there are missing iataCodes in the table and intitiate filling 
+# missing info to the google sheet
+for i in readData['prices']:
+    if i['iataCode'] == '':  
+        flight_search = FlightSearch()
+        get_destination = flight_search.get_destination_code('New York')
+        print(get_destination)
+        updateData = flight_data.updateIATACodes()
+        break
 
-# print(flight_data.result['prices'][0]['iataCode'])
-
-
-
-# for i in flight_data.result['prices']:
-#     if flight_data.result['prices'][0]['iataCode'] == "":
-#         print('!!!None break check fill!!!')
-#         break
 
