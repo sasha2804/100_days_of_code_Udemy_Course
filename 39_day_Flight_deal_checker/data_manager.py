@@ -26,7 +26,7 @@ class DataManager:
         for i in self.sheetydata['prices']:            
             data = {
                 "price": {
-                   "iataCode": 'testing'                    
+                   "iataCode": i['iataCode']                    
                 }
             }            
             endpoint = f"{END_POINT_PUT}/{id}"
@@ -35,33 +35,5 @@ class DataManager:
         print("response.status_code =", response.status_code) 
         print("response.text= ", response.text)
 
-       
-
-      
-        
-
-      
-
-
-
-
-
-        # for city in self.destination_data:
-        #     new_data = {
-        #         "price": {
-        #             "iataCode": city["iataCode"]
-        #         }
-        #     }
-        #     response = requests.put(
-        #         url=f"{SHEETY_PRICES_ENDPOINT}/{city['id']}",
-        #         json=new_data
-        #     )
-        #     print(response.text)
-
- 
-
-
-
-# test = DataManager()
 
     
