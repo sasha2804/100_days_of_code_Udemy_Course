@@ -1,7 +1,29 @@
+
 ol {
   margin-left: -40px;
   margin-top: -20px;
   list-style-position: inside;
 }
-
 /* Write your CSS below, don't change the rules above. */
+
+.note{
+  color: red;
+}
+
+.note1{
+  color: green;
+}
+
+.note1{
+  color: grey;
+}
+
+p[dragable = "true"]{
+  color: blue;
+
+}
+
+p[dragable = "false"]{
+  color: yellow;
+
+}
