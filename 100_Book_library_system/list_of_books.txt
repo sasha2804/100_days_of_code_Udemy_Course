@@ -1,0 +1,119 @@
+Title: To Kill a Mockingbird
+Author: Harper Lee
+Genre: Fiction
+ISBN: 9780061120084
+Publication Year: 1960
+
+Title: 1984
+Author: George Orwell
+Genre: Dystopian Fiction
+ISBN: 9780451524935
+Publication Year: 1949
+
+Title: The Great Gatsby
+Author: F. Scott Fitzgerald
+Genre: Classic Literature
+ISBN: 9780743273565
+Publication Year: 1925
+
+Title: Pride and Prejudice
+Author: Jane Austen
+Genre: Romance
+ISBN: 9780486284736
+Publication Year: 1813
+
+Title: The Catcher in the Rye
+Author: J.D. Salinger
+Genre: Coming-of-Age Fiction
+ISBN: 9780316769480
+Publication Year: 1951
+
+Title: Harry Potter and the Sorcerer's Stone
+Author: J.K. Rowling
+Genre: Fantasy
+ISBN: 9780590353427
+Publication Year: 1997
+
+Title: The Hobbit
+Author: J.R.R. Tolkien
+Genre: Fantasy
+ISBN: 9780547928227
+Publication Year: 1937
+
+Title: Gone with the Wind
+Author: Margaret Mitchell
+Genre: Historical Fiction
+ISBN: 9781416548942
+Publication Year: 1936
+
+Title: The Lord of the Rings
+Author: J.R.R. Tolkien
+Genre: Fantasy
+ISBN: 9780618640157
+Publication Year: 1954
+
+Title: The Da Vinci Code
+Author: Dan Brown
+Genre: Mystery, Thriller
+ISBN: 9780307474278
+Publication Year: 2003
+
+Title: The Shining
+Author: Stephen King
+Genre: Horror
+ISBN: 9780307743657
+Publication Year: 1977
+
+Title: The Girl with the Dragon Tattoo
+Author: Stieg Larsson
+Genre: Mystery, Thriller
+ISBN: 9780307454546
+Publication Year: 2005
+
+Title: The Hitchhiker's Guide to the Galaxy
+Author: Douglas Adams
+Genre: Science Fiction
+ISBN: 9780345391803
+Publication Year: 1979
+
+Title: Brave New World
+Author: Aldous Huxley
+Genre: Dystopian Fiction
+ISBN: 9780060850524
+Publication Year: 1932
+
+Title: The Hunger Games
+Author: Suzanne Collins
+Genre: Dystopian Fiction
+ISBN: 9780439023481
+Publication Year: 2008
+
+Title: The Alchemist
+Author: Paulo Coelho
+Genre: Fiction
+ISBN: 9780061122415
+Publication Year: 1988
+
+Title: Sapiens: A Brief History of Humankind
+Author: Yuval Noah Harari
+Genre: Non-fiction, History
+ISBN: 9780062316097
+Publication Year: 2011
+
+Title: The Road
+Author: Cormac McCarthy
+Genre: Post-Apocalyptic Fiction
+ISBN: 9780307387899
+Publication Year: 2006
+
+Title: The Kite Runner
+Author: Khaled Hosseini
+Genre: Historical Fiction
+ISBN: 9781594631931
+Publication Year: 2003
+
+Title: The Fault in Our Stars
+Author: John Green
+Genre: Young Adult, Romance
+ISBN: 9780525478812
+Publication Year: 2012

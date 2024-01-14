@@ -12,25 +12,32 @@ class Library:
         self.connection = sqlite3.connect(db_name)
         self.cursor = self.connection.cursor()
         self.create_books_table()
+        
+        
+        
 
     def create_books_table(self):
         create_books_table_query = """
             CREATE TABLE IF NOT EXISTS books_list_table (
                 id INTEGER PRIMARY KEY,
                 title TEXT,
+                genre TEXT,
+                isbn TEXT,
                 author TEXT, 
-                year INTEGER
+                publication_year TEXT, 
+                status TEXT, 
+                comment TEXT
             );
             """
         self.cursor.execute(create_books_table_query)
         self.connection.commit()
     
-    def insert_book(self, title, author, year):
+    def insert_book(self, title, genre, isbn, author, publication_year, status, comment):
         # book = Book()
         insert_data_query = """
-        INSERT INTO books_list_table (title, author, year) VALUES (?, ?, ?);
+        INSERT INTO books_list_table (title, genre, isbn, author, publication_year, status, comment) VALUES (?, ?, ?, ?, ?, ?, ?);
         """
-        data_to_insert = (title, author, year)
+        data_to_insert = (title, genre, isbn, author, publication_year, status, comment)
         self.cursor.execute(insert_data_query, data_to_insert)
         # Commit the changes to the database
         self.connection.commit()
@@ -54,7 +61,7 @@ class Library:
         self.connection.close()
 
     
-    def search_book(self, title, author):
+    def search_book(self, title, genre, isbn, author, publication_year, status, comment):
         
 
 

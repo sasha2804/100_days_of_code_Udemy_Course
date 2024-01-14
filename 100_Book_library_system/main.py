@@ -1,11 +1,7 @@
-
 from data import Library
 
 
-
 library = Library()
-
-
 
 def main():  
 
@@ -21,19 +17,22 @@ def main():
         if choice == "1":
             title = input('Enter title: ')
             author = input('Enter author: ')
-            year = input('Enter year: ')            
-            library.insert_book(title, author, year)
+            genre = input('Enter genre: ')
+            isbn = input('Enter ISBN: ')
+            publication_year = input('Enter publication year: ')
+            status = input('Enter status: ')
+            comment = input('Enter comment: ')
+                       
+            library.insert_book(title, genre, isbn, author, publication_year, status, comment)
 
         if choice == "4":
             title = input('Enter title: ')
             author = input('Enter author: ')
             library.search_book(title, author)
-
             
         elif choice == "5":
             print('Exiting a program. Good Bye!')
             break
-
 
 
 if __name__ == "__main__":
