@@ -1,0 +1,34 @@
+Book library system
+
+Contains 3 Classes
+    Class Book. 
+     Includes Title, Author, Publication Year, 
+     Qty on shelf, Status in use/on shelf, User name (Optionally) 
+    
+    Class library.
+     Performs all management operations.
+     Book managemert, Users management
+    
+    Class user.
+     Contains information about book users. 
+     First Name, Second Name, Age, ID Nr., Start date, end date, Book, Comment
+
+
+Step 1.
+    Make program as comand based solution
+    Without users management
+    Date base sqlite
+
+
+Step 2. 
+    Extend version 1 with users management
+
+
+Step 3.
+    Extend version 2 to interface based solution
+
+
+
+    
+     
+    
